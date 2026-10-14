@@ -72,6 +72,7 @@
 .yb-actions .play{background:#25253f;color:#fff}
 .yb-actions .back{border:1px solid #d7c6b7;color:#6f5140;background:#fffaf5}
 @media(min-width:900px){.yb-pages{grid-template-columns:repeat(2,1fr)}.yb-page:first-child,.yb-page:last-child{grid-column:1/-1}}
+@media(min-width:900px){.yeobaek-canva .portfolio-slider-shell,.jelly-canva .portfolio-slider-shell{max-width:max(560px,calc((100vh - 345px) * 1.7778));margin-left:auto;margin-right:auto}}
 @media(max-width:700px){.yeobaek-canva{padding:56px 0 68px}.yeobaek-canva .yb-head{align-items:start;flex-direction:column}.yb-page{border-radius:16px}}
 
 
@@ -489,10 +490,13 @@
     var sec=h&&document.getElementById(h);
     var shell=sec&&sec.querySelector('.portfolio-slider-shell');
     if(!shell)return;
+    var head=sec.querySelector('.yb-head,.jc-head,.section-head')||shell;
+    var acts=sec.querySelector('.yb-actions,.jc-actions')||shell;
     var img=shell.querySelector('.is-active img');
     var go=function(){
-      var r=shell.getBoundingClientRect();
-      var top=window.scrollY+r.top-Math.max(0,(window.innerHeight-r.height)/2);
+      var t=head.getBoundingClientRect().top, bt=acts.getBoundingClientRect().bottom;
+      var h=bt-t;
+      var top=window.scrollY+t-Math.max(12,(window.innerHeight-h)/2);
       window.scrollTo({top:Math.max(0,top),behavior:'instant'});
     };
     if(img&&!img.complete){img.loading='eager';img.addEventListener('load',go,{once:true});}
