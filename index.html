@@ -264,11 +264,20 @@
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
 .cta-music{background:transparent;color:#7d638e;border:1.5px solid #9f85af;padding:10.5px 24px}
 .cta-music:hover{background:#9f85af;color:#fff}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:center}
+.hero-player{background:rgba(255,253,250,.82);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:0 18px 44px rgba(71,58,81,.13);backdrop-filter:blur(6px)}
+.hero-player .cover-copy strong{font-size:28px}
+.hp-meta{padding:14px 4px 4px;display:flex;flex-direction:column;gap:2px}
+.hp-label{font-size:10px;letter-spacing:.2em;color:#86649b}
+.hp-title{font-size:17px;margin-top:4px;color:var(--ink)}
+.hp-sub{font-size:11px;color:var(--muted);margin-bottom:12px}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:36px}.hero-player{max-width:420px;display:flex;gap:14px;align-items:center;padding:12px}.hero-player .album-cover{width:104px;flex:none;padding:12px;border-radius:14px}.hero-player .cover-copy strong{font-size:15px}.hero-player .cover-copy small{font-size:8px}.hp-meta{padding:0;flex:1;min-width:0}.hp-sub{margin-bottom:8px}}
 </style>
 </head>
 <body>
 <header class="site-header"><div class="wrap nav"><a class="brand" href="#home" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="#home">Home</a><div class="has-sub"><a href="#works" class="sub-toggle" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><a href="#works" role="menuitem">Featured Works</a><a href="#jellypop-portfolio" role="menuitem">젤리팝</a><a href="#yeobaek-portfolio" role="menuitem">여백</a><a href="#banana-portfolio" role="menuitem">바나나 키우기</a><a href="#music" role="menuitem">Music</a></div></div><a href="#music">Music</a><a href="#motto">My Motto</a><a href="mailto:hello@example.com" id="contact">Contact</a></nav></div></header>
-<main><section class="hero" id="home"><div class="wrap hero-inner"><div class="eyebrow">A little world of creativity</div><h1>재미있는 것을 만들고,<br>나만의 이야기를 씁니다.</h1><p class="intro">게임과 앱, 음악과 글.<br>작은 아이디어를 하나씩 작품으로 만들어 가는 개인 창작 공간입니다.</p><div class="cta-row"><a class="cta" href="#works">작품 구경하기 &nbsp;↗</a><a class="cta cta-music" href="#music">♪ 노래 듣기</a></div></div></section>
+<main><section class="hero" id="home"><div class="wrap hero-inner"><div class="hero-text"><div class="eyebrow">A little world of creativity</div><h1>재미있는 것을 만들고,<br>나만의 이야기를 씁니다.</h1><p class="intro">게임과 앱, 음악과 글.<br>작은 아이디어를 하나씩 작품으로 만들어 가는 개인 창작 공간입니다.</p><div class="cta-row"><a class="cta" href="#works">작품 구경하기 &nbsp;↗</a><a class="cta cta-music" href="#music">♪ 노래 듣기</a></div></div>
+<aside class="hero-player" aria-label="대표곡 플레이어"><div class="album-cover cover-lyrics"><div class="cover-copy"><small>SONG</small><strong>가사만<br>써볼게</strong></div></div><div class="hp-meta"><span class="hp-label">NOW PLAYING</span><strong class="hp-title">가사만 써볼게</strong><small class="hp-sub">Lyrics 이나은 · Music Suno</small><div class="demo-controls"><button class="demo-play" type="button" aria-label="재생" data-src="assets/gasaman-sseobolge.mp3">▶</button><div class="demo-track" role="progressbar" aria-label="재생 위치" style="cursor:pointer"><span></span></div><span class="demo-time">0:00 / 3:29</span></div></div></aside></div></section>
 <section class="section" id="works"><div class="wrap"><div class="section-head"><h2>Featured Works</h2><p>좋아하는 것들을 하나씩, 꾸준히.</p></div><div class="cards">
 <article class="card"><a class="gallery-link" href="#jellypop-portfolio" aria-label="젤리팝 포트폴리오 보기"><img class="gallery-image" src="assets/image-01.png" alt="젤리팝 실제 메인 화면과 3매치 플레이 화면" loading="lazy"><span class="jellypop-banner-title" aria-hidden="true">젤리팝</span></a><div class="card-body"><div class="tag">GAME</div><h3>젤리팝</h3><p>털실 감성의 단계 선택과 3매치 퍼즐 게임.</p><div class="card-actions"><a class="project-link" href="#jellypop-portfolio">포트폴리오 보기 ↓</a><a class="project-link" href="https://lee-cloud999.github.io/jellypop/" target="_blank" rel="noopener">직접 플레이 ↗</a><details><summary>캡처 원본 보기</summary><a href="assets/image-02.jpg">메인 화면</a> · <a href="assets/image-03.jpg">플레이 화면</a></details></div></div></article>
 <article class="card"><a class="gallery-link" href="#yeobaek-portfolio" target="_blank" rel="noopener"><img class="gallery-image" src="assets/image-04.jpg" alt="여백 실제 메인 화면과 주요 기능 화면" loading="lazy"></a><div class="card-body"><div class="tag">APP</div><h3>여백</h3><p>단어·문장·문단으로 생각을 가볍게 남기는 기록 앱.</p><div class="card-actions"><a class="project-link" href="#yeobaek-portfolio">포트폴리오 보기 ↓</a><a class="project-link" href="https://lee-cloud999.github.io/Yeobaek/" target="_blank" rel="noopener">직접 사용 ↗</a><details><summary>캡처 원본 보기</summary><a href="assets/image-05.jpg">메인 화면</a> · <a href="assets/image-06.jpg">주요 기능 화면</a></details></div></div></article>
@@ -486,39 +495,43 @@
     });
   }));
   const fmt = t => { t = Math.floor(t || 0); return Math.floor(t/60) + ':' + String(t%60).padStart(2,'0'); };
+  const audios = {};
   let current = null;
+  const bySrc = {};
   document.querySelectorAll('.demo-play').forEach(btn => {
     const src = btn.dataset.src;
     if (!src) return;
-    const box = btn.closest('.demo-player');
-    const bar = box.querySelector('.demo-track span');
-    const track = box.querySelector('.demo-track');
-    const time = box.querySelector('.demo-time');
-    const audio = new Audio(src);
+    const box = btn.closest('.demo-player, .hero-player');
+    (bySrc[src] = bySrc[src] || []).push({
+      btn, bar: box.querySelector('.demo-track span'), track: box.querySelector('.demo-track'), time: box.querySelector('.demo-time')
+    });
+  });
+  Object.keys(bySrc).forEach(src => {
+    const ps = bySrc[src];
+    const audio = audios[src] = new Audio(src);
     audio.preload = 'none';
     const update = () => {
       const d = audio.duration || 0;
-      bar.style.width = d ? (audio.currentTime / d * 100) + '%' : '0%';
-      time.textContent = fmt(audio.currentTime) + ' / ' + fmt(d);
+      ps.forEach(p => { p.bar.style.width = d ? (audio.currentTime / d * 100) + '%' : '0%'; p.time.textContent = fmt(audio.currentTime) + ' / ' + fmt(d); });
     };
     audio.addEventListener('timeupdate', update);
     audio.addEventListener('loadedmetadata', update);
-    audio.addEventListener('play', () => { btn.textContent = '❚❚'; btn.setAttribute('aria-label','일시정지'); });
-    audio.addEventListener('pause', () => { btn.textContent = '▶'; btn.setAttribute('aria-label','재생'); });
+    audio.addEventListener('play', () => ps.forEach(p => { p.btn.textContent = '❚❚'; p.btn.setAttribute('aria-label','일시정지'); }));
+    audio.addEventListener('pause', () => ps.forEach(p => { p.btn.textContent = '▶'; p.btn.setAttribute('aria-label','재생'); }));
     audio.addEventListener('ended', () => { audio.currentTime = 0; update(); });
-    btn.addEventListener('click', () => {
-      if (audio.paused) {
-        if (current && current !== audio) current.pause();
-        current = audio;
-        audio.play().catch(() => { time.textContent = '재생할 수 없어요'; });
-      } else {
-        audio.pause();
-      }
-    });
-    track.addEventListener('click', e => {
-      if (!audio.duration) return;
-      const r = track.getBoundingClientRect();
-      audio.currentTime = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)) * audio.duration;
+    ps.forEach(p => {
+      p.btn.addEventListener('click', () => {
+        if (audio.paused) {
+          if (current && current !== audio) current.pause();
+          current = audio;
+          audio.play().catch(() => { p.time.textContent = '재생할 수 없어요'; });
+        } else { audio.pause(); }
+      });
+      p.track.addEventListener('click', e => {
+        if (!audio.duration) return;
+        const r = p.track.getBoundingClientRect();
+        audio.currentTime = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)) * audio.duration;
+      });
     });
   });
 })();
