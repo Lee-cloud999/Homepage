@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f8f4ef">
+<title>Portfolio — Lee Naeun</title>
+<style>
+:root{--ink:#473a51;--muted:#756b78;--lav:#d7c3e3;--paper:#f8f4ef;--white:#fffdfa;--line:#e9e0e8}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.75}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}.site-header{border-bottom:1px solid var(--line);background:rgba(255,253,250,.85)}.nav{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font:600 30px/1.1 Georgia,'Times New Roman',serif;letter-spacing:-.8px;white-space:nowrap}.brand small{display:block;font:500 9px/1.8 system-ui,sans-serif;letter-spacing:3px;margin-top:7px}.links{display:flex;gap:30px;font-size:13px}.links a:hover,.links a:focus-visible{color:#86649b}.hero{padding:100px 0 105px;position:relative;overflow:hidden;background:linear-gradient(120deg,#fdfbf8 15%,#f5edf5 75%,#e9dced 100%)}.hero:after{content:'';position:absolute;width:360px;height:360px;border:1px solid #d7c3e3;border-radius:50%;right:-90px;top:20px;box-shadow:0 0 0 42px #e9dced55,0 0 0 85px #e9dced30;pointer-events:none}.hero-inner{position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#80688c}.hero h1{font-size:clamp(34px,5.4vw,64px);font-weight:500;line-height:1.43;letter-spacing:-2.5px;margin:22px 0 22px;font-family:Georgia,'Nanum Myeongjo','Batang',serif}.intro{font-size:16px;color:#655b6c;max-width:520px}.cta{display:inline-flex;margin-top:24px;padding:12px 24px;background:#9f85af;color:white;border-radius:30px;font-size:14px;transition:background .2s}.cta:hover{background:#7d638e}.section{padding:72px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:26px}.section h2{font:500 clamp(27px,4vw,38px) Georgia,'Times New Roman',serif;margin:0}.section-head p{font-size:13px;color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden}.art{height:185px;display:flex;align-items:center;justify-content:center;font-size:56px;background:linear-gradient(135deg,#e9dbf0,#f7e8dc)}.card:nth-child(2) .art{background:linear-gradient(135deg,#f3e9e2,#e7ddeb)}.card:nth-child(3) .art{background:linear-gradient(135deg,#e8dbe9,#f6ede4)}.card-body{padding:20px 22px 24px}.tag{font-size:10px;letter-spacing:2px;color:#8d739a}.card h3{margin:6px 0;font-size:20px}.card p{margin:0;color:var(--muted);font-size:13px}.note{font-size:12px;color:var(--muted);margin-top:18px}.motto{background:#eae0ec;padding:48px 0}.motto p{font-family:Georgia,'Batang',serif;font-size:clamp(20px,3vw,30px);line-height:1.8;margin:12px 0 0}
+.motto p{word-break:keep-all;overflow-wrap:break-word;text-wrap:balance}
+@media(max-width:700px){.motto p{font-size:18px;line-height:1.75}}.footer{padding:35px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.footer .wrap{display:flex;justify-content:space-between;gap:15px;align-items:center}@media(max-width:700px){.wrap{width:min(100% - 36px,1120px)}.nav{min-height:80px;align-items:flex-start;padding-top:17px;flex-direction:column;gap:14px;padding-bottom:15px}.brand{font-size:26px}.links{gap:20px;flex-wrap:wrap}.hero{padding:80px 0}.hero:after{opacity:.45;right:-210px}.hero h1{letter-spacing:-1.2px}.cards{grid-template-columns:1fr}.art{height:165px}.section{padding:52px 0}.section-head{align-items:start;flex-direction:column;gap:5px}.footer .wrap{flex-direction:column;align-items:start}}
+.cards{grid-template-columns:repeat(2,1fr)}
+.card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(71,58,81,.08);border-color:#d9c8dc}
+.gallery-link{display:block;background:#eee5f0;overflow:hidden}
+.gallery-image{width:100%;height:auto;display:block;transition:transform .35s ease}
+.gallery-link:hover .gallery-image{transform:scale(1.012)}
+.card-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:15px}
+.project-link{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;border:1px solid #d8c5dc;border-radius:999px;color:#6e557c;font-size:12px;background:#fbf7fb}
+.project-link:hover{background:#f0e6f2}
+.card details{font-size:12px;margin-top:0}.card summary{cursor:pointer;color:#80688c;list-style:none;padding:8px 0}.card summary::-webkit-details-marker{display:none}
+.card details a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){.cards{grid-template-columns:1fr}}
+/* Jellypop Canva portfolio */
+.jelly-canva{background:#fbf1e6;padding:82px 0 96px;border-top:1px solid #eaded1}
+.jelly-canva .jc-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+.jelly-canva .jc-kicker{font-size:12px;letter-spacing:.17em;font-weight:700;color:#8a6a58}
+.jelly-canva h2{margin:8px 0 0;font-size:clamp(34px,5vw,56px);letter-spacing:-1.8px;color:#5a3824}
+.jelly-canva .jc-note{max-width:430px;line-height:1.7;color:#7b6659;font-size:14px}
+.jc-pages{display:grid;grid-template-columns:1fr;gap:22px}
+.jc-page{margin:0;border-radius:24px;overflow:hidden;background:#fff7ee;border:1px solid #e8d9ca;box-shadow:0 16px 44px rgba(88,57,35,.08)}
+.jc-page img{width:100%;height:auto;display:block}
+.jc-caption{padding:10px 16px 13px;font-size:11px;color:#8b7465;background:#fff9f2}
+.jc-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.jc-actions a{display:inline-flex;padding:11px 18px;border-radius:999px;text-decoration:none;font-size:13px}
+.jc-actions .play{background:#ea86a6;color:#fff}
+.jc-actions .back{border:1px solid #d9c5b6;color:#6f5140;background:#fff8f0}
+@media(min-width:900px){.jc-pages{grid-template-columns:repeat(2,1fr)}.jc-page:first-child,.jc-page:last-child{grid-column:1/-1}.jc-page:first-child img,.jc-page:last-child img{width:100%}}
+@media(max-width:700px){.jelly-canva{padding:56px 0 68px}.jelly-canva .jc-head{align-items:start;flex-direction:column}.jc-page{border-radius:16px}}
+
+
+.jc-page{position:relative}
+.jc-canva-play{
+  position:absolute;
+  left:54.5%;
+  top:48.5%;
+  width:38.5%;
+  height:15.5%;
+  display:block;
+  border-radius:999px;
+  z-index:4;
+  cursor:pointer;
+}
+.jc-canva-play:focus-visible{
+  outline:4px solid rgba(111,85,124,.55);
+  outline-offset:4px;
+}
+
+
+/* Yeobaek final portfolio */
+.yeobaek-canva{background:#f7f0e8;padding:82px 0 96px;border-top:1px solid #e5d9cb}
+.yeobaek-canva .yb-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+.yeobaek-canva .yb-kicker{font-size:12px;letter-spacing:.17em;font-weight:700;color:#9a7257}
+.yeobaek-canva h2{margin:8px 0 0;font-size:clamp(34px,5vw,56px);letter-spacing:-1.8px;color:#25253f}
+.yeobaek-canva .yb-note{max-width:460px;line-height:1.75;color:#76685f;font-size:14px}
+.yb-pages{display:grid;grid-template-columns:1fr;gap:22px}
+.yb-page{position:relative;margin:0;border-radius:24px;overflow:hidden;background:#fffaf5;border:1px solid #e4d6c8;box-shadow:0 16px 44px rgba(37,37,63,.08)}
+.yb-page img{width:100%;height:auto;display:block}
+.yb-caption{padding:10px 16px 13px;font-size:11px;color:#89786d;background:#fffaf5}
+.yb-canva-play{position:absolute;left:5%;top:34%;width:48%;height:15%;display:block;z-index:5;border-radius:10px;cursor:pointer}
+.yb-canva-play:focus-visible{outline:4px solid rgba(155,114,87,.5);outline-offset:4px}
+.yb-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.yb-actions a{display:inline-flex;padding:11px 18px;border-radius:999px;text-decoration:none;font-size:13px}
+.yb-actions .play{background:#25253f;color:#fff}
+.yb-actions .back{border:1px solid #d7c6b7;color:#6f5140;background:#fffaf5}
+@media(min-width:900px){.yb-pages{grid-template-columns:repeat(2,1fr)}.yb-page:first-child,.yb-page:last-child{grid-column:1/-1}}
+@media(max-width:700px){.yeobaek-canva{padding:56px 0 68px}.yeobaek-canva .yb-head{align-items:start;flex-direction:column}.yb-page{border-radius:16px}}
+
+
+/* Large portfolio slider */
+.jc-pages,.yb-pages{
+  display:block !important;
+  position:relative;
+  max-width:1320px;
+  margin:0 auto;
+}
+.jc-page,.yb-page{
+  display:none !important;
+  margin:0 !important;
+  border-radius:22px;
+  overflow:hidden;
+}
+.jc-page.is-active,.yb-page.is-active{display:block !important}
+.jc-page img,.yb-page img{
+  width:100% !important;
+  height:auto !important;
+  display:block;
+  cursor:zoom-in;
+}
+.portfolio-slider-shell{position:relative}
+.portfolio-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:20;
+  width:54px;height:54px;
+  border:0;border-radius:50%;
+  background:rgba(255,250,245,.94);
+  box-shadow:0 8px 24px rgba(37,37,63,.18);
+  font-size:38px;line-height:1;
+  color:#4d3a31;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+}
+.portfolio-arrow:hover{transform:translateY(-50%) scale(1.04)}
+.portfolio-arrow.prev{left:-30px}
+.portfolio-arrow.next{right:-30px}
+.portfolio-status{
+  display:flex;align-items:center;justify-content:center;
+  gap:14px;margin-top:16px;color:#7c685b;font-size:13px;
+}
+.portfolio-dots{display:flex;gap:7px;align-items:center}
+.portfolio-dot{
+  width:7px;height:7px;border:0;border-radius:50%;
+  background:#d8c8bc;padding:0;cursor:pointer;
+}
+.portfolio-dot.is-active{width:22px;border-radius:99px;background:#786052}
+@media(max-width:760px){
+  .portfolio-arrow{width:42px;height:42px;font-size:30px}
+  .portfolio-arrow.prev{left:8px}.portfolio-arrow.next{right:8px}
+  .jc-page,.yb-page{border-radius:14px}
+}
+/* fullscreen image viewer */
+.portfolio-lightbox{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(20,18,28,.94);
+  display:none;align-items:center;justify-content:center;
+  padding:24px;
+}
+.portfolio-lightbox.open{display:flex}
+.portfolio-lightbox img{max-width:96vw;max-height:92vh;object-fit:contain}
+.portfolio-lightbox-close{
+  position:fixed;right:22px;top:18px;
+  width:46px;height:46px;border:0;border-radius:50%;
+  background:#fff;color:#27233a;font-size:28px;cursor:pointer;
+}
+
+
+.portfolio-arrow{
+  padding:0 !important;
+  line-height:1 !important;
+  font-family:Arial, sans-serif;
+  text-indent:0;
+}
+.portfolio-arrow.prev,
+.portfolio-arrow.next{
+  padding-bottom:5px !important;
+}
+
+
+/* Music archive */
+.music-archive{
+  padding:96px 0;
+  background:linear-gradient(180deg,#f7f0e8 0%,#f3eef7 100%);
+  border-top:1px solid #e5d9cb;
+}
+.music-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+.music-kicker{font-size:12px;font-weight:700;letter-spacing:.18em;color:#8d6f7f}
+.music-head h2{margin:8px 0 0;font-size:clamp(38px,5vw,62px);letter-spacing:-2px;color:#302b3e}
+.music-head h2{word-break:keep-all;text-wrap:balance}
+@media(max-width:620px){.music-head h2{font-size:min(30px,7.4vw);letter-spacing:-1px;line-height:1.35}}
+.music-intro{max-width:470px;margin:0;color:#766b74;line-height:1.8;font-size:14px}
+.music-tabs{display:flex;gap:9px;margin-bottom:24px;flex-wrap:wrap}
+.music-tab{border:1px solid #d8c9d7;background:rgba(255,255,255,.65);color:#6f5d69;border-radius:999px;padding:8px 15px;font-size:12px;cursor:pointer}
+.music-tab.active{background:#716077;color:white;border-color:#716077}
+.music-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.music-card{background:rgba(255,255,255,.72);border:1px solid #e3d8df;border-radius:24px;padding:16px;box-shadow:0 15px 40px rgba(55,43,65,.06);transition:.2s ease}
+.music-card:hover{transform:translateY(-3px);box-shadow:0 18px 46px rgba(55,43,65,.10)}
+.album-cover{aspect-ratio:1/1;border-radius:17px;overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:24px;background:#ded0dc}
+.album-cover.cover-air{background:linear-gradient(145deg,#7d6789,#c8abc3)}
+.album-cover.cover-lyrics{background:linear-gradient(145deg,#e6d4c5,#b99c8d)}
+.album-cover.cover-rain{background:linear-gradient(145deg,#bfc7d3,#797f94)}
+.album-cover::before{content:"";position:absolute;width:170px;height:170px;border:1px solid rgba(255,255,255,.36);border-radius:50%;right:-38px;top:-30px}
+.album-cover::after{content:"";position:absolute;width:95px;height:95px;background:rgba(255,255,255,.10);border-radius:50%;right:18px;top:18px}
+.cover-copy{position:relative;z-index:2;color:white}
+.cover-copy small{font-size:10px;letter-spacing:.16em;opacity:.78}
+.cover-copy strong{display:block;margin-top:7px;font-size:clamp(22px,2.4vw,34px);line-height:1.12;letter-spacing:-1px}
+.music-meta{padding:17px 3px 2px}
+.music-meta h3{margin:0;color:#352f3d;font-size:18px}
+.music-meta p{margin:8px 0 14px;color:#7a6e76;font-size:13px;line-height:1.65;min-height:43px}
+.music-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.music-tag{font-size:10px;padding:5px 8px;border-radius:999px;background:#eee5ec;color:#766371}
+.demo-player{border-top:1px solid #e8dde5;padding-top:13px}
+.demo-controls{display:flex;align-items:center;gap:10px}
+.demo-play{width:36px;height:36px;border:0;border-radius:50%;background:#716077;color:white;font-size:15px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.demo-track{height:4px;flex:1;background:#ddd1da;border-radius:999px;overflow:hidden}
+.demo-track span{display:block;width:0;height:100%;background:#716077}
+.demo-time{font-size:10px;color:#91838d;white-space:nowrap}
+.music-note{margin:25px 0 0;color:#8a7d85;font-size:12px;line-height:1.7}
+@media(max-width:900px){.music-grid{grid-template-columns:1fr 1fr}.music-head{align-items:start;flex-direction:column}}
+@media(max-width:620px){.music-archive{padding:68px 0}.music-grid{grid-template-columns:1fr}.music-meta p{min-height:0}}
+
+
+/* Jellypop gallery banner: original image + live HTML title */
+.gallery-link:has(.jellypop-banner-title){
+  position:relative;
+  display:block;
+  overflow:hidden;
+}
+.gallery-link:has(.jellypop-banner-title) img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.jellypop-banner-title{
+  position:absolute;
+  left:34%;
+  top:43%;
+  transform:translate(-50%,-50%);
+  z-index:3;
+  color:#6f4b8b;
+  font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;
+  font-size:clamp(25px,3.6vw,56px);
+  font-weight:400;
+  letter-spacing:-0.03em;
+  line-height:1;
+  white-space:nowrap;
+  text-shadow:0 2px 0 rgba(255,255,255,.65);
+  pointer-events:none;
+}
+@media(max-width:700px){
+  .jellypop-banner-title{
+    left:34%;
+    top:43%;
+    font-size:clamp(20px,7vw,38px);
+  }
+}
+
+
+
+
+
+.font-credit{
+  margin-top:18px;
+  font-size:10px;
+  line-height:1.6;
+  color:#9a8f96;
+  opacity:.82;
+}
+
+</style>
+<style id="submenu-style">
+.has-sub{position:relative;display:flex;align-items:center}
+.has-sub .caret{font-size:10px;margin-left:2px;display:inline-block;transition:transform .2s}
+.submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);min-width:150px;padding:8px;margin-top:6px;background:rgba(255,253,250,.98);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(71,58,81,.12);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:60;display:flex;flex-direction:column;gap:2px}
+.submenu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.submenu a{padding:9px 14px;border-radius:9px;white-space:nowrap;font-size:13px}
+.submenu a:hover,.submenu a:focus-visible{background:#f1e8f5;color:#86649b}
+.has-sub:hover .submenu,.has-sub:focus-within .submenu,.has-sub.open .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.has-sub:hover .caret,.has-sub.open .caret{transform:rotate(180deg)}
+@media(max-width:700px){.submenu{left:0;transform:translateY(6px)}.has-sub:hover .submenu,.has-sub:focus-within .submenu,.has-sub.open .submenu{transform:translateY(0)}}
+.section,.jelly-canva,.yeobaek-canva,.music-archive{scroll-margin-top:90px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.cta-music{background:transparent;color:#7d638e;border:1.5px solid #9f85af;padding:10.5px 24px}
+.cta-music:hover{background:#9f85af;color:#fff}
+.hero-inner{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:center}
+.hero-player{background:rgba(255,253,250,.82);border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:0 18px 44px rgba(71,58,81,.13);backdrop-filter:blur(6px)}
+.hero-player .cover-copy strong{font-size:28px}
+.hp-meta{padding:14px 4px 4px;display:flex;flex-direction:column;gap:2px}
+.hp-label{font-size:10px;letter-spacing:.2em;color:#86649b}
+.hp-title{font-size:17px;margin-top:4px;color:var(--ink)}
+.hp-sub{font-size:11px;color:var(--muted);margin-bottom:12px}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:36px}.hero-player{max-width:420px;display:flex;gap:14px;align-items:center;padding:12px}.hero-player .album-cover{width:104px;flex:none;padding:12px;border-radius:14px}.hero-player .cover-copy strong{font-size:15px}.hero-player .cover-copy small{font-size:8px}.hp-meta{padding:0;flex:1;min-width:0}.hp-sub{margin-bottom:8px}}
+
+/* Banana gallery banner: original image + live HTML title */
+.gallery-link:has(.banana-banner-title){position:relative;display:block;overflow:hidden}
+.gallery-link:has(.banana-banner-title) img{display:block;width:100%;height:auto;object-fit:cover}
+.banana-banner-title{
+  position:absolute;left:41%;top:27%;transform:translate(-50%,-50%);z-index:3;
+  color:#fffdf0;
+  font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;
+  font-size:clamp(25px,3.4vw,50px);font-weight:400;letter-spacing:-0.02em;line-height:1;white-space:nowrap;
+  -webkit-text-stroke:.14em #8a4b12;paint-order:stroke fill;
+  text-shadow:0 .06em 0 rgba(138,75,18,.35);
+  pointer-events:none;
+}
+@media(max-width:700px){.banana-banner-title{font-size:clamp(24px,8vw,40px)}}
+</style>
+
+<style>.links a.active,.links .sub-toggle.active{color:#86649b}</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="index.html">Home</a><div class="has-sub"><a href="index.html#works" class="sub-toggle active" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><a href="index.html#works" role="menuitem">Featured Works</a><a href="#jellypop-portfolio" role="menuitem">젤리팝</a><a href="#banana-portfolio" role="menuitem">바나나 키우기</a><a href="#yeobaek-portfolio" role="menuitem">여백</a></div></div><a href="music.html">Music</a><a href="index.html#motto">My Motto</a><a href="mailto:hello@example.com" id="contact">Contact</a></nav></div></header>
+<main>
+<section class="jelly-canva" id="jellypop-portfolio">
+  <div class="wrap">
+    <div class="jc-head">
+      <div><div class="jc-kicker">JELLYPOP · PORTFOLIO</div><h2>젤리팝</h2></div>
+      <p class="jc-note">Canva에서 만든 젤리팝 포트폴리오의 화면 구성과 실제 게임 스크린샷을 홈페이지에서도 그대로 감상할 수 있도록 옮겼습니다.</p>
+    </div>
+    <div class="portfolio-slider-shell" id="jellypop-slider">
+      <button class="portfolio-arrow prev" type="button" aria-label="이전 페이지">‹</button>
+      <div class="jc-pages"><figure class="jc-page"><img src="assets/image-13.png" alt="젤리팝 포트폴리오 1페이지" loading="lazy"><figcaption class="jc-caption">01 · 표지 · 젤리팝과 털실 여행</figcaption></figure>
+<figure class="jc-page"><img src="assets/image-14.png" alt="젤리팝 포트폴리오 2페이지" loading="lazy"><figcaption class="jc-caption">02 · 주인공은 별!</figcaption></figure>
+<figure class="jc-page"><img src="assets/image-15.png" alt="젤리팝 포트폴리오 3페이지" loading="lazy"><figcaption class="jc-caption">03 · 게임 소개 · 100단계 3매치 퍼즐</figcaption></figure>
+<figure class="jc-page"><img src="assets/image-16.png" alt="젤리팝 포트폴리오 4페이지" loading="lazy"><figcaption class="jc-caption">04 · 포털로 이어지는 챕터 이동</figcaption></figure>
+<figure class="jc-page"><img src="assets/image-17.png" alt="젤리팝 포트폴리오 5페이지" loading="lazy"><figcaption class="jc-caption">05 · 출석 · 이벤트 · 룰렛</figcaption></figure>
+<figure class="jc-page"><img src="assets/image-18.png" alt="젤리팝 포트폴리오 6페이지" loading="lazy"><figcaption class="jc-caption">06 · 특수 젤리와 튜토리얼</figcaption></figure>
+<figure class="jc-page"><img src="assets/image-19.png" alt="젤리팝 포트폴리오 7페이지" loading="lazy"><figcaption class="jc-caption">07 · 기믹과 학습 방식</figcaption></figure>
+<figure class="jc-page"><img src="assets/image-20.png" alt="젤리팝 포트폴리오 8페이지" loading="lazy"><figcaption class="jc-caption">08 · 보상과 털실방 꾸미기</figcaption></figure>
+<figure class="jc-page"><img src="assets/image-21.png" alt="젤리팝 포트폴리오 9페이지" loading="lazy"><a class="jc-canva-play" href="https://lee-cloud999.github.io/jellypop/" target="_blank" rel="noopener" aria-label="젤리팝 직접 해보기"></a><figcaption class="jc-caption">09 · 기술 및 제작 정보</figcaption></figure></div>
+      <button class="portfolio-arrow next" type="button" aria-label="다음 페이지">›</button>
+      <div class="portfolio-status">
+        <span class="portfolio-count">01 / 09</span>
+        <span class="portfolio-dots" aria-label="페이지 선택"></span>
+      </div>
+    </div>
+    <div class="jc-actions">
+      <a class="play" href="https://lee-cloud999.github.io/jellypop/" target="_blank" rel="noopener">젤리팝 직접 해보기 ↗</a>
+      <a class="back" href="index.html#works">작품 목록으로 ↑</a>
+    </div>
+  </div>
+</section>
+<section class="yeobaek-canva" id="banana-portfolio">
+  <div class="wrap">
+    <div class="yb-head">
+      <div><div class="yb-kicker">BANANA · GAME PORTFOLIO</div><h2>바나나 키우기</h2></div>
+      <p class="yb-note">바나나 친구를 먹이고, 산책시키고, 요리하며 키우는 캐주얼 게임. 실제 플레이 화면과 함께 기능을 소개합니다.</p>
+    </div>
+    <div class="portfolio-slider-shell" id="banana-slider">
+      <button class="portfolio-arrow prev" type="button" aria-label="이전 페이지">‹</button>
+      <div class="yb-pages"><figure class="yb-page"><img src="assets/banana-01.jpg" alt="바나나 키우기 포트폴리오 1페이지" loading="lazy"><figcaption class="yb-caption">01 · 표지 · 바나나 키우기</figcaption></figure><figure class="yb-page"><img src="assets/banana-02.jpg" alt="바나나 키우기 포트폴리오 2페이지" loading="lazy"><figcaption class="yb-caption">02 · 기본 키우기</figcaption></figure><figure class="yb-page"><img src="assets/banana-03.jpg" alt="바나나 키우기 포트폴리오 3페이지" loading="lazy"><figcaption class="yb-caption">03 · 먹이주기</figcaption></figure><figure class="yb-page"><img src="assets/banana-04.jpg" alt="바나나 키우기 포트폴리오 4페이지" loading="lazy"><figcaption class="yb-caption">04 · 산책</figcaption></figure><figure class="yb-page"><img src="assets/banana-05.jpg" alt="바나나 키우기 포트폴리오 5페이지" loading="lazy"><figcaption class="yb-caption">05 · 미니게임</figcaption></figure><figure class="yb-page"><img src="assets/banana-06.jpg" alt="바나나 키우기 포트폴리오 6페이지" loading="lazy"><figcaption class="yb-caption">06 · 요리와 레시피 도감</figcaption></figure><figure class="yb-page"><img src="assets/banana-07.jpg" alt="바나나 키우기 포트폴리오 7페이지" loading="lazy"><figcaption class="yb-caption">07 · 농장과 꾸미기</figcaption></figure><figure class="yb-page"><img src="assets/banana-08.jpg" alt="바나나 키우기 포트폴리오 8페이지" loading="lazy"><figcaption class="yb-caption">08 · 핸드폰과 졸업 도감</figcaption></figure><figure class="yb-page"><img src="assets/banana-09.jpg" alt="바나나 키우기 포트폴리오 9페이지" loading="lazy"><figcaption class="yb-caption">09 · 일일 미션과 출석체크</figcaption></figure><figure class="yb-page"><img src="assets/banana-10.jpg" alt="바나나 키우기 포트폴리오 10페이지" loading="lazy"><figcaption class="yb-caption">10 · 이용 방법</figcaption></figure></div>
+      <button class="portfolio-arrow next" type="button" aria-label="다음 페이지">›</button>
+      <div class="portfolio-status">
+        <span class="portfolio-count">01 / 10</span>
+        <span class="portfolio-dots" aria-label="페이지 선택"></span>
+      </div>
+    </div>
+    <div class="yb-actions">
+      <a class="play" href="https://lee-cloud999.github.io/banana/" target="_blank" rel="noopener">바나나 키우기 직접 플레이 ↗</a>
+      <a class="back" href="index.html#works">작품 목록으로 ↑</a>
+    </div>
+  </div>
+</section>
+<section class="yeobaek-canva" id="yeobaek-portfolio">
+  <div class="wrap">
+    <div class="yb-head">
+      <div><div class="yb-kicker">YEOBAEK · APP PORTFOLIO</div><h2>여백</h2></div>
+      <p class="yb-note">스쳐가는 생각을 단어·문장·문단으로 남기고, 다시 꺼내 글감으로 이어 가는 기록 앱. 최종 Canva 포트폴리오의 실제 화면을 그대로 담았습니다.</p>
+    </div>
+    <div class="portfolio-slider-shell" id="yeobaek-slider">
+      <button class="portfolio-arrow prev" type="button" aria-label="이전 페이지">‹</button>
+      <div class="yb-pages"><figure class="yb-page"><img src="assets/image-22.png" alt="여백 포트폴리오 1페이지" loading="lazy"><figcaption class="yb-caption">01 · 표지 · 여백</figcaption></figure><figure class="yb-page"><img src="assets/image-23.png" alt="여백 포트폴리오 2페이지" loading="lazy"><figcaption class="yb-caption">02 · 여백은 이런 앱이에요</figcaption></figure><figure class="yb-page"><img src="assets/image-24.png" alt="여백 포트폴리오 3페이지" loading="lazy"><figcaption class="yb-caption">03 · 쓰기</figcaption></figure><figure class="yb-page"><img src="assets/image-25.png" alt="여백 포트폴리오 4페이지" loading="lazy"><figcaption class="yb-caption">04 · 모아보기</figcaption></figure><figure class="yb-page"><img src="assets/image-26.png" alt="여백 포트폴리오 5페이지" loading="lazy"><figcaption class="yb-caption">05 · 활용 ① 기록 다시 꺼내기</figcaption></figure><figure class="yb-page"><img src="assets/image-27.png" alt="여백 포트폴리오 6페이지" loading="lazy"><figcaption class="yb-caption">06 · 활용 ② 이어 붙이고 카드로</figcaption></figure><figure class="yb-page"><img src="assets/image-28.png" alt="여백 포트폴리오 7페이지" loading="lazy"><figcaption class="yb-caption">07 · 통계</figcaption></figure><figure class="yb-page"><img src="assets/image-29.png" alt="여백 포트폴리오 8페이지" loading="lazy"><figcaption class="yb-caption">08 · 설정 · 동기화 · 테마</figcaption></figure><figure class="yb-page"><img src="assets/image-30.png" alt="여백 포트폴리오 9페이지" loading="lazy"><a class="yb-canva-play" href="https://lee-cloud999.github.io/Yeobaek/" target="_blank" rel="noopener" aria-label="여백 직접 체험하기"></a><figcaption class="yb-caption">09 · 직접 체험해 보세요</figcaption></figure></div>
+      <button class="portfolio-arrow next" type="button" aria-label="다음 페이지">›</button>
+      <div class="portfolio-status">
+        <span class="portfolio-count">01 / 09</span>
+        <span class="portfolio-dots" aria-label="페이지 선택"></span>
+      </div>
+    </div>
+    <div class="yb-actions">
+      <a class="play" href="https://lee-cloud999.github.io/Yeobaek/" target="_blank" rel="noopener">여백 직접 체험하기 ↗</a>
+      <a class="back" href="index.html#works">작품 목록으로 ↑</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><span>Lee Naeun · Creative Archive</span><span>© 2026 Lee Naeun</span></div>
+</footer>
+<script>document.getElementById('contact').addEventListener('click',function(e){e.preventDefault();alert('연락처는 아직 설정하지 않았어요. 공개할 이메일을 정한 뒤 연결할게요.');});</script>
+<div class="portfolio-lightbox" id="portfolio-lightbox" aria-hidden="true">
+  <button class="portfolio-lightbox-close" type="button" aria-label="확대 보기 닫기">×</button>
+  <img src="" alt="포트폴리오 확대 보기">
+</div>
+<script>
+(function(){
+  const sliders = document.querySelectorAll('.portfolio-slider-shell');
+
+  sliders.forEach(slider => {
+    const pages = Array.from(slider.querySelectorAll('.jc-page, .yb-page'));
+    const prev = slider.querySelector('.prev');
+    const next = slider.querySelector('.next');
+    const count = slider.querySelector('.portfolio-count');
+    const dotsBox = slider.querySelector('.portfolio-dots');
+    let index = 0;
+
+    pages.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'portfolio-dot';
+      dot.setAttribute('aria-label', `${i+1}페이지 보기`);
+      dot.addEventListener('click', () => show(i));
+      dotsBox.appendChild(dot);
+    });
+    const dots = Array.from(dotsBox.children);
+
+    function show(i){
+      index = (i + pages.length) % pages.length;
+      pages.forEach((p,n) => p.classList.toggle('is-active', n === index));
+      dots.forEach((d,n) => d.classList.toggle('is-active', n === index));
+      count.textContent = `${String(index+1).padStart(2,'0')} / ${String(pages.length).padStart(2,'0')}`;
+    }
+    prev.addEventListener('click', () => show(index - 1));
+    next.addEventListener('click', () => show(index + 1));
+
+    let touchX = null;
+    slider.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, {passive:true});
+    slider.addEventListener('touchend', e => {
+      if(touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if(Math.abs(dx) > 45) show(index + (dx < 0 ? 1 : -1));
+      touchX = null;
+    }, {passive:true});
+
+    slider.addEventListener('keydown', e => {
+      if(e.key === 'ArrowLeft') show(index - 1);
+      if(e.key === 'ArrowRight') show(index + 1);
+    });
+    slider.tabIndex = 0;
+    show(0);
+  });
+
+  const lightbox = document.getElementById('portfolio-lightbox');
+  const lightImg = lightbox.querySelector('img');
+  const close = lightbox.querySelector('.portfolio-lightbox-close');
+
+  document.querySelectorAll('.jc-page img,.yb-page img').forEach(img => {
+    img.addEventListener('click', e => {
+      // Don't intercept a click if it belongs to a link overlay.
+      if(e.target.closest('a')) return;
+      lightImg.src = img.src;
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    });
+  });
+  function closeBox(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    lightImg.src='';
+    document.body.style.overflow='';
+  }
+  close.addEventListener('click', closeBox);
+  lightbox.addEventListener('click', e => { if(e.target === lightbox) closeBox(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && lightbox.classList.contains('open')) closeBox(); });
+})();
+</script>
+<script>
+(function(){
+  const box=document.querySelector('.has-sub'); if(!box) return;
+  const t=box.querySelector('.sub-toggle');
+  t.addEventListener('click',function(e){
+    if(window.matchMedia('(hover:none)').matches||window.innerWidth<=700){
+      e.preventDefault(); const o=box.classList.toggle('open'); t.setAttribute('aria-expanded',o);
+    }
+  });
+  box.querySelectorAll('.submenu a').forEach(a=>a.addEventListener('click',()=>{box.classList.remove('open');t.setAttribute('aria-expanded','false');}));
+  document.addEventListener('click',e=>{if(!box.contains(e.target)){box.classList.remove('open');t.setAttribute('aria-expanded','false');}});
+})();
+</script>
+</body></html>
