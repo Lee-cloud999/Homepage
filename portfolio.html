@@ -476,5 +476,24 @@
   box.querySelectorAll('.submenu a').forEach(a=>a.addEventListener('click',()=>{box.classList.remove('open');t.setAttribute('aria-expanded','false');}));
   document.addEventListener('click',e=>{if(!box.contains(e.target)){box.classList.remove('open');t.setAttribute('aria-expanded','false');}});
 })();
+
+(function(){
+  function centerSlider(){
+    var h=decodeURIComponent(location.hash.slice(1));
+    var sec=h&&document.getElementById(h);
+    var shell=sec&&sec.querySelector('.portfolio-slider-shell');
+    if(!shell)return;
+    var img=shell.querySelector('.is-active img');
+    var go=function(){
+      var r=shell.getBoundingClientRect();
+      var top=window.scrollY+r.top-Math.max(0,(window.innerHeight-r.height)/2);
+      window.scrollTo({top:Math.max(0,top),behavior:'instant'});
+    };
+    if(img&&!img.complete){img.loading='eager';img.addEventListener('load',go,{once:true});}
+    go();
+  }
+  window.addEventListener('load',function(){setTimeout(centerSlider,60);setTimeout(centerSlider,500)});
+  window.addEventListener('hashchange',function(){setTimeout(centerSlider,60);setTimeout(centerSlider,500)});
+})();
 </script>
 </body></html>
