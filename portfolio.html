@@ -140,8 +140,14 @@
 .portfolio-lightbox-close{
   position:fixed;right:22px;top:18px;
   width:46px;height:46px;border:0;border-radius:50%;
-  background:#fff;color:#27233a;font-size:28px;cursor:pointer;
+  background:#fff;color:#27233a;font-size:0;cursor:pointer;padding:0;
 }
+.portfolio-lightbox-close::before,.portfolio-lightbox-close::after{
+  content:"";position:absolute;left:50%;top:50%;width:20px;height:2px;
+  background:#27233a;border-radius:2px;
+}
+.portfolio-lightbox-close::before{transform:translate(-50%,-50%) rotate(45deg)}
+.portfolio-lightbox-close::after{transform:translate(-50%,-50%) rotate(-45deg)}
 
 
 .portfolio-arrow{
