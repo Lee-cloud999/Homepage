@@ -165,6 +165,8 @@
 .music-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
 .music-kicker{font-size:12px;font-weight:700;letter-spacing:.18em;color:#8d6f7f}
 .music-head h2{margin:8px 0 0;font-size:clamp(38px,5vw,62px);letter-spacing:-2px;color:#302b3e}
+.music-head h2{word-break:keep-all;text-wrap:balance}
+@media(max-width:620px){.music-head h2{font-size:min(30px,7.4vw);letter-spacing:-1px;line-height:1.35}}
 .music-intro{max-width:470px;margin:0;color:#766b74;line-height:1.8;font-size:14px}
 .music-tabs{display:flex;gap:9px;margin-bottom:24px;flex-wrap:wrap}
 .music-tab{border:1px solid #d8c9d7;background:rgba(255,255,255,.65);color:#6f5d69;border-radius:999px;padding:8px 15px;font-size:12px;cursor:pointer}
