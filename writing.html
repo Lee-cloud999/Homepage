@@ -312,7 +312,8 @@
 <style>
 .writing [hidden]{display:none!important}
 .writing{padding:84px 0 110px;background:linear-gradient(160deg,#fdfbf8 20%,#f5edf5 100%)}
-.writing h1{font:500 clamp(34px,5.4vw,56px)/1.25 Georgia,'Nanum Myeongjo','Batang',serif;letter-spacing:-1.5px;margin:16px 0 8px;color:var(--ink);word-break:keep-all}
+.writing h1{margin:8px 0 14px;font-size:clamp(38px,5vw,62px);font-weight:700;letter-spacing:-2px;line-height:1.3;color:#302b3e;word-break:keep-all}
+@media(max-width:620px){.writing h1{font-size:min(30px,7.4vw);letter-spacing:-1px;line-height:1.35}}
 .wr-lead{color:#655b6c;max-width:560px;margin:0 0 32px;word-break:keep-all}
 .wr-tabs{display:flex;gap:10px;margin-bottom:30px}
 .wr-tab{border:1px solid #e0d3de;background:#fffdfa;color:#6b5d6e;font:inherit;font-size:13px;padding:10px 20px;border-radius:999px;cursor:pointer}
@@ -350,7 +351,7 @@
 <body>
 <header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="index.html">Home</a><a href="index.html#works">Featured Works</a><div class="has-sub"><a href="portfolio.html" class="sub-toggle active" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><a href="portfolio.html" role="menuitem">Portfolio</a><a href="music.html" role="menuitem">Music</a><a href="writing.html" role="menuitem" class="active" aria-current="page">Writing</a></div></div><a href="about.html">About</a><a href="mailto:ggiyoo@gmail.com" id="contact">Contact</a></nav></div></header>
 <main><section class="writing"><div class="wrap">
-<div class="eyebrow">Writing</div>
+<div class="music-kicker">WRITING · CREATIVE ARCHIVE</div>
 <h1>글을 쓰고, 마음을 나눕니다.</h1>
 <p class="wr-lead">AI 없이 제가 직접 쓴 글을 모아 두고, 작품과 글을 보고 느낀 점을 남기는 공간이에요.</p>
 <div class="wr-tabs" role="tablist"><button class="wr-tab active" type="button" role="tab" data-tab="posts">글</button><button class="wr-tab" type="button" role="tab" data-tab="board">게시판</button></div>
