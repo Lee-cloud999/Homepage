@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fbf4ea">
+<title>햄스터 마을 | 이나은 — 머지 퍼즐 웹게임 포트폴리오</title>
+<meta name="description" content="작은 햄스터들과 함께 재료를 합치고, 부탁을 들어주고, 마을을 꾸며 나가는 포근한 머지 게임 '햄스터 마을'의 소개 페이지예요.">
+<link rel="canonical" href="https://lee-cloud999.github.io/Homepage/hamster-village.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Lee Naeun · Creative Archive"><meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="햄스터 마을 | 이나은"><meta property="og:description" content="재료를 합치고, 부탁을 들어주고, 마을을 꾸미는 포근한 머지 게임.">
+<meta property="og:url" content="https://lee-cloud999.github.io/Homepage/hamster-village.html">
+<meta property="og:image" content="https://lee-cloud999.github.io/Homepage/assets/hamster-banner.jpg"><meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/hamster/hero.webp" type="image/webp">
+<style>
+/* ---- 홈페이지 공통 (portfolio.html과 같은 값) ---- */
+:root{--ink:#473a51;--muted:#756b78;--lav:#d7c3e3;--paper:#f8f4ef;--white:#fffdfa;--line:#e9e0e8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.75}
+a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%}
+.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+.site-header{border-bottom:1px solid var(--line);background:rgba(255,253,250,.85)}
+.nav{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font:600 30px/1.1 Georgia,'Times New Roman',serif;letter-spacing:-.8px;white-space:nowrap}
+.brand small{display:block;font:500 9px/1.8 system-ui,sans-serif;letter-spacing:3px;margin-top:7px}
+.links{display:flex;gap:30px;font-size:13px}
+.links a:hover,.links a:focus-visible{color:#86649b}
+.links a.active,.links .sub-toggle.active{color:#86649b}
+.footer{padding:35px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.footer .wrap{display:flex;justify-content:space-between;gap:15px;align-items:center}
+.font-credit{margin-top:18px;font-size:10px;line-height:1.6;color:#9a8f96;opacity:.82;text-align:center}
+.has-sub{position:relative;display:flex;align-items:center}
+.has-sub .caret{font-size:10px;margin-left:2px;display:inline-block;transition:transform .2s}
+.submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);min-width:150px;padding:8px;margin-top:6px;background:rgba(255,253,250,.98);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(71,58,81,.12);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:60;display:flex;flex-direction:column;gap:2px}
+.submenu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.submenu a{padding:9px 14px;border-radius:9px;white-space:nowrap;font-size:13px}
+.submenu a:hover,.submenu a:focus-visible{background:#f1e8f5;color:#86649b}
+.has-sub:hover .submenu,.has-sub:focus-within .submenu,.has-sub.open .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.has-sub:hover .caret,.has-sub.open .caret{transform:rotate(180deg)}
+@media(max-width:700px){
+  .wrap{width:min(100% - 36px,1120px)}
+  .nav{min-height:80px;align-items:flex-start;padding-top:17px;flex-direction:column;gap:14px;padding-bottom:15px}
+  .brand{font-size:26px}.links{gap:20px;flex-wrap:wrap}
+  .submenu{left:0;transform:translateY(6px)}
+  .has-sub:hover .submenu,.has-sub:focus-within .submenu,.has-sub.open .submenu{transform:translateY(0)}
+  .footer .wrap{flex-direction:column;align-items:flex-start}
+}
+
+/* ---- 홈페이지 배너와 같은 주아체 (이 페이지에 쓰는 글자만 담은 작은 파일) ---- */
+@font-face{font-family:"BM JUA Embedded";src:url("assets/hamster/jua-subset.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+
+/* ---- 햄스터 마을 페이지 ---- */
+.hv{
+  --ivory:#fffaf2;--cream:#fbf1e3;--caramel:#b97a43;--caramel-d:#8a4b12;--cocoa:#5c4232;
+  --peach:#ffd7c2;--rose:#ffad9e;--leaf:#7fa65e;
+  background:linear-gradient(180deg,#fbf4ea 0,#fdf8f1 420px,var(--paper) 100%);color:var(--cocoa);word-break:keep-all
+}
+.hv h1,.hv h2,.hv h3,.jua{font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-weight:400;letter-spacing:-.01em}
+.hv h2{font-size:clamp(28px,4.4vw,40px);line-height:1.2;margin:0 0 10px;color:var(--cocoa)}
+.hv .lead{margin:0;color:#7b6152;font-size:15.5px;max-width:34em}
+.hv section{padding:64px 0}
+.hv .wrap.narrow{width:min(880px,calc(100% - 48px))}
+
+/* 버튼 */
+.btn-play{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:999px;
+  background:var(--caramel);color:#fffaf2;font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-size:19px;
+  box-shadow:0 5px 0 var(--caramel-d);transition:transform .12s,box-shadow .12s,background .2s}
+.btn-play:hover{background:#a86a35}
+.btn-play:active{transform:translateY(3px);box-shadow:0 2px 0 var(--caramel-d)}
+.btn-soft{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;border:1.5px solid #e2c8ad;color:var(--cocoa);background:var(--ivory);font-size:14.5px;font-weight:600}
+.btn-soft:hover{background:#fff3e6}
+a:focus-visible,button:focus-visible{outline:3px solid #e39a6a;outline-offset:3px;border-radius:12px}
+
+/* 1. 메인 소개 */
+.hv-hero{padding:34px 0 56px}
+.hero-art{position:relative;border-radius:28px;overflow:hidden;background:#f3e2c9;aspect-ratio:2/1;box-shadow:0 18px 40px rgba(138,75,18,.14)}
+.hero-art img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-title{position:absolute;left:5%;top:9%;margin:0;color:#fffdf0;font-size:clamp(34px,7vw,76px);line-height:1;white-space:nowrap;
+  -webkit-text-stroke:.14em var(--caramel-d);paint-order:stroke fill;text-shadow:0 .07em 0 rgba(138,75,18,.3)}
+.hero-copy{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin-top:30px}
+.hero-copy p.intro{margin:0;font-size:clamp(17px,2.1vw,21px);line-height:1.7;color:var(--cocoa);max-width:30em;word-break:keep-all}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.facts li{padding:5px 13px;border-radius:999px;background:var(--cream);border:1px solid #f0dcc3;font-size:13px;color:#86603f}
+.facts li.season{background:#ffe9df;border-color:#ffcbb8;color:#b0583c}
+.hero-cta{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.hero-cta small{font-size:12px;color:#a2856f}
+
+/* 2. 플레이 소개 — 실제로 한 판이 도는 순서 */
+.loop{display:grid;gap:22px;margin-top:30px;counter-reset:step}
+.step{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;background:var(--ivory);border:1px solid #f0e1cf;border-radius:26px;padding:26px}
+.step:nth-child(even) .step-img{order:-1}
+.step-no{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--peach);color:#9a4f30;font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-size:18px;margin-bottom:10px}
+.step h3{font-size:clamp(22px,3vw,27px);margin:0 0 6px;color:var(--cocoa)}
+.step p{margin:0;color:#7b6152;font-size:15px;word-break:keep-all}
+.step-img{border-radius:18px;overflow:hidden;background:#f6e6cf;border:1px solid #efdcc4}
+.step-img img{display:block;width:100%;height:auto}
+.loop-note{margin:18px 0 0;font-size:13.5px;color:#a2856f;text-align:center}
+
+/* 3. 주민 */
+.residents{background:var(--cream);border-top:1px solid #f1e0cb;border-bottom:1px solid #f1e0cb}
+.pets{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 0;padding:0;list-style:none}
+.pet{background:var(--ivory);border:1px solid #f0dfca;border-radius:22px;padding:18px 14px 20px;text-align:center}
+.pet img{display:block;width:min(128px,80%);height:auto;aspect-ratio:1;margin:0 auto 8px}
+.pet h3{margin:0;font-size:22px;color:var(--cocoa)}
+.pet p{margin:4px 0 0;font-size:13.5px;line-height:1.6;color:#86684f;word-break:keep-all}
+.pet.locked{background:repeating-linear-gradient(135deg,#f7ead8 0 10px,#f4e4cf 10px 20px);border-style:dashed;border-color:#e3c9a8}
+.pet.locked .lock{display:grid;place-items:center;width:min(128px,80%);aspect-ratio:1;margin:0 auto 8px;border-radius:50%;background:rgba(255,250,242,.75)}
+.pet.locked .lock svg{width:38%;height:auto}
+.pet.locked h3{color:#b08f70;letter-spacing:.08em}
+.pet.locked p{color:#a88a6e}
+
+/* 4. 갤러리 */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:30px 0 0;padding:0;list-style:none;align-items:center}
+.shot figure{margin:0}
+.shot .frame{border-radius:30px;padding:9px;background:#4a382d;box-shadow:0 16px 34px rgba(74,56,45,.2)}
+.shot img{display:block;width:100%;height:auto;border-radius:22px;background:#f3e2c9}
+.shot figcaption{margin-top:14px;text-align:center}
+.shot figcaption b{display:block;font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-weight:400;font-size:20px;color:var(--cocoa)}
+.shot figcaption span{font-size:13.5px;color:#8f7058}
+
+/* 5. 시즌 1 */
+.season-box{display:grid;grid-template-columns:auto minmax(0,1fr);gap:34px;align-items:center;background:var(--ivory);border:1px solid #f0dcc3;border-radius:30px;padding:34px}
+.lv-badge{width:150px;height:150px;border-radius:50%;display:grid;place-content:center;text-align:center;background:radial-gradient(circle at 35% 30%,#ffe3d5,#ffbfa6 62%,#f5a083);color:#fff;box-shadow:0 0 0 7px #fff,0 0 0 9px #f7d6c4}
+.lv-badge small{font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-size:17px;letter-spacing:.06em;opacity:.95}
+.lv-badge strong{font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-weight:400;font-size:64px;line-height:.9}
+.season-box ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.season-box li{position:relative;padding-left:22px;font-size:15px;color:#7b6152;word-break:keep-all}
+.season-box li::before{content:"";position:absolute;left:4px;top:.72em;width:8px;height:8px;border-radius:50%;background:var(--rose)}
+
+/* 6. 개발 이야기 */
+.story{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:start}
+.story p{margin:0 0 14px;font-size:15.5px;color:#6f5545;word-break:keep-all}
+.made{margin:0;padding:22px 24px;border-radius:22px;background:var(--cream);border:1px solid #f0dcc3;display:grid;gap:12px}
+.made div{display:grid;grid-template-columns:6.4em minmax(0,1fr);gap:10px;font-size:14px}
+.made dt{font-weight:700;color:#8a5a33}
+.made dd{margin:0;color:#7b6152;word-break:keep-all}
+
+/* 7. 마무리 */
+.outro{text-align:center;padding:72px 0 84px!important}
+.outro img{width:116px;height:auto;display:block;margin:0 auto 6px}
+.outro h2{margin-bottom:6px}
+.outro .lead{margin:0 auto 26px}
+.outro .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+/* 태블릿 */
+@media(max-width:900px){
+  .pets{grid-template-columns:repeat(2,1fr)}
+  .shots{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto;gap:34px}
+  .story{grid-template-columns:1fr;gap:22px}
+}
+/* 휴대폰 */
+@media(max-width:700px){
+  .hv section{padding:48px 0}
+  .hv .wrap.narrow{width:min(100% - 36px,880px)}
+  .hv-hero{padding:20px 0 40px}
+  .hero-art{border-radius:20px}
+  .hero-copy{grid-template-columns:1fr;gap:22px;margin-top:22px}
+  .hero-cta{align-items:stretch}.hero-cta small{text-align:center}
+  .btn-play{width:100%}
+  .step{grid-template-columns:1fr;gap:16px;padding:18px;border-radius:22px}
+  .step:nth-child(even) .step-img{order:0}
+  .pets{gap:10px}.pet{padding:14px 10px 16px;border-radius:18px}.pet h3{font-size:20px}.pet p{font-size:12.5px}
+  .season-box{grid-template-columns:1fr;justify-items:center;text-align:left;padding:26px 20px;gap:22px}
+  .lv-badge{width:124px;height:124px}.lv-badge strong{font-size:54px}
+  .outro .row a{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="index.html">Home</a><a href="index.html#works" class="active">Featured Works</a><div class="has-sub"><a href="portfolio.html" class="sub-toggle" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><a href="portfolio.html" role="menuitem">Portfolio</a><a href="music.html" role="menuitem">Music</a><a href="writing.html" role="menuitem">Writing</a></div></div><a href="about.html">About</a><a href="mailto:ggiyoo@gmail.com" id="contact">Contact</a></nav></div></header>
+
+<main class="hv">
+
+  <!-- 1. 메인 소개 -->
+  <section class="hv-hero" aria-labelledby="hv-title">
+    <div class="wrap">
+      <div class="hero-art">
+        <img src="assets/hamster/hero.webp" width="1200" height="600" alt="해바라기씨와 도토리를 안은 햄스터 세 마리가 꽃이 핀 햄스터 마을에 앉아 있어요" fetchpriority="high">
+        <h1 class="hero-title" id="hv-title">햄스터 마을</h1>
+      </div>
+      <div class="hero-copy">
+        <div>
+          <p class="intro">작은 햄스터들과 함께 재료를 합치고, 부탁을 들어주고, 마을을 꾸며 나가는 포근한 머지 게임.</p>
+          <ul class="facts" aria-label="게임 정보">
+            <li>머지 퍼즐</li><li>마을 꾸미기</li><li>주민 이야기</li><li class="season">시즌 1 · 최고 레벨 30</li>
+          </ul>
+        </div>
+        <div class="hero-cta">
+          <a class="btn-play" href="https://lee-cloud999.github.io/hamster-village/" target="_blank" rel="noopener">게임 플레이하기</a>
+          <small>설치 없이 휴대폰·태블릿·PC 브라우저에서 바로 열려요</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 게임 플레이 소개 -->
+  <section aria-labelledby="play-title">
+    <div class="wrap narrow">
+      <h2 id="play-title">이렇게 놀아요</h2>
+      <p class="lead">합치고, 전해 주고, 꾸미는 세 가지가 하나로 이어져요. 부탁을 들어줄수록 마을이 조금씩 넓어져요.</p>
+      <ol class="loop" style="list-style:none;padding:0;margin-top:30px">
+        <li class="step">
+          <div>
+            <span class="step-no" aria-hidden="true">1</span>
+            <h3>재료 합치기</h3>
+            <p>생성기를 눌러 재료를 꺼내고, 같은 재료 두 개를 겹치면 한 단계 위의 재료가 돼요. 해바라기씨가 새싹이 되고, 새싹이 꽃이 돼요.</p>
+          </div>
+          <div class="step-img"><img src="assets/hamster/crop-merge.webp" width="600" height="382" loading="lazy" decoding="async" alt="나무 칸 위에 해바라기씨, 새싹, 도토리가 놓인 머지 보드"></div>
+        </li>
+        <li class="step">
+          <div>
+            <span class="step-no" aria-hidden="true">2</span>
+            <h3>주민의 부탁 들어주기</h3>
+            <p>주민들이 필요한 재료를 주문판에 올려요. 알맞은 재료를 만들어 주문판을 누르면 코인과 경험치를 받아요.</p>
+          </div>
+          <div class="step-img"><img src="assets/hamster/crop-order.webp" width="600" height="241" loading="lazy" decoding="async" alt="콩이와 보리가 새싹, 해바라기씨, 꽃봉오리를 부탁하는 주문판 세 장"></div>
+        </li>
+        <li class="step">
+          <div>
+            <span class="step-no" aria-hidden="true">3</span>
+            <h3>마을 꾸미기</h3>
+            <p>모은 코인으로 주민의 방에 침대와 간식 선반을 놓아 주세요. 같은 자리도 여러 스타일 중에서 골라 꾸밀 수 있어요.</p>
+          </div>
+          <div class="step-img"><img src="assets/hamster/crop-decor.webp" width="600" height="567" loading="lazy" decoding="async" alt="바구니 침대와 간식 선반이 놓인 보리네 방"></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 3. 주민 소개 -->
+  <section class="residents" aria-labelledby="pets-title">
+    <div class="wrap narrow">
+      <h2 id="pets-title">마을의 주민들</h2>
+      <p class="lead">마을에는 여덟 마리의 햄스터가 살게 돼요. 먼저 세 친구를 소개할게요.</p>
+      <ul class="pets">
+        <li class="pet"><img src="assets/hamster/pet-bori.webp" width="256" height="256" loading="lazy" decoding="async" alt="해바라기씨를 안은 노란 햄스터 보리"><h3>보리</h3><p>볼주머니 가득 이삿짐을 싣고 온 마을의 첫 주민</p></li>
+        <li class="pet"><img src="assets/hamster/pet-kongi.webp" width="256" height="256" loading="lazy" decoding="async" alt="윙크하며 해바라기씨를 안은 크림색 햄스터 콩이"><h3>콩이</h3><p>벽 너머에서 쳇바퀴를 굴리는 씩씩한 이웃</p></li>
+        <li class="pet"><img src="assets/hamster/pet-bamtol.webp" width="256" height="256" loading="lazy" decoding="async" alt="커다란 도토리를 안은 밤색 햄스터 밤톨"><h3>밤톨</h3><p>하품이 끊이지 않는 느긋한 이웃</p></li>
+        <li class="pet locked"><span class="lock" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="21" rx="6" fill="#d9a774"/><path d="M16 21v-5a8 8 0 0 1 16 0v5" fill="none" stroke="#b9834f" stroke-width="4.5" stroke-linecap="round"/><circle cx="24" cy="31" r="3.2" fill="#8a5a33"/></svg></span><h3>???</h3><p>마을에서 만나보세요</p></li>
+        <li class="pet locked"><span class="lock" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="21" rx="6" fill="#d9a774"/><path d="M16 21v-5a8 8 0 0 1 16 0v5" fill="none" stroke="#b9834f" stroke-width="4.5" stroke-linecap="round"/><circle cx="24" cy="31" r="3.2" fill="#8a5a33"/></svg></span><h3>???</h3><p>마을에서 만나보세요</p></li>
+        <li class="pet locked"><span class="lock" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="21" rx="6" fill="#d9a774"/><path d="M16 21v-5a8 8 0 0 1 16 0v5" fill="none" stroke="#b9834f" stroke-width="4.5" stroke-linecap="round"/><circle cx="24" cy="31" r="3.2" fill="#8a5a33"/></svg></span><h3>???</h3><p>마을에서 만나보세요</p></li>
+        <li class="pet locked"><span class="lock" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="21" rx="6" fill="#d9a774"/><path d="M16 21v-5a8 8 0 0 1 16 0v5" fill="none" stroke="#b9834f" stroke-width="4.5" stroke-linecap="round"/><circle cx="24" cy="31" r="3.2" fill="#8a5a33"/></svg></span><h3>???</h3><p>마을에서 만나보세요</p></li>
+        <li class="pet locked"><span class="lock" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="21" rx="6" fill="#d9a774"/><path d="M16 21v-5a8 8 0 0 1 16 0v5" fill="none" stroke="#b9834f" stroke-width="4.5" stroke-linecap="round"/><circle cx="24" cy="31" r="3.2" fill="#8a5a33"/></svg></span><h3>???</h3><p>마을에서 만나보세요</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. 게임 화면 -->
+  <section aria-labelledby="shots-title">
+    <div class="wrap">
+      <h2 id="shots-title">실제 게임 화면</h2>
+      <p class="lead">게임에서 그대로 캡처한 초반 화면이에요.</p>
+      <ul class="shots">
+        <li class="shot"><figure><div class="frame"><img src="assets/hamster/shot-board.webp" width="640" height="1243" loading="lazy" decoding="async" alt="주문판과 머지 보드, 하단 메뉴가 보이는 햄스터 마을 기본 화면"></div><figcaption><b>머지 보드</b><span>재료를 꺼내고 합치는 기본 화면</span></figcaption></figure></li>
+        <li class="shot"><figure><div class="frame"><img src="assets/hamster/shot-orders.webp" width="720" height="524" loading="lazy" decoding="async" alt="콩이와 보리가 재료를 부탁하는 주문판과 그 아래 머지 보드"></div><figcaption><b>주문판</b><span>보리와 콩이의 부탁</span></figcaption></figure></li>
+        <li class="shot"><figure><div class="frame"><img src="assets/hamster/shot-decor.webp" width="640" height="1243" loading="lazy" decoding="async" alt="땅 위 마을과 땅속 보리네 방, 콩이네 방이 보이는 마을 꾸미기 화면"></div><figcaption><b>마을 꾸미기</b><span>땅속 방부터 하나씩 꾸며요</span></figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. 시즌 1 -->
+  <section aria-labelledby="season-title">
+    <div class="wrap narrow">
+      <div class="season-box">
+        <div class="lv-badge" aria-hidden="true"><small>LV</small><strong>30</strong></div>
+        <div>
+          <h2 id="season-title">시즌 1</h2>
+          <p class="lead">시즌 1은 레벨 30까지 즐길 수 있는 완성된 이야기예요.</p>
+          <ul>
+            <li>부탁을 들어주고 마을을 꾸미다 보면 주민들의 이야기가 하나씩 열려요.</li>
+            <li>레벨이 오를 때마다 보리의 산책길에서 선물을 받아요.</li>
+            <li>새 이웃이 언제, 누가 찾아올지는 직접 플레이하며 확인해 보세요.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 제작 이야기 -->
+  <section aria-labelledby="dev-title">
+    <div class="wrap narrow">
+      <div class="story">
+        <div>
+          <h2 id="dev-title">만든 이야기</h2>
+          <p>햄스터 마을은 혼자 만든 웹게임이에요. 게임 기획부터 시스템 구성, 화면 디자인, 테스트까지 직접 맡았어요.</p>
+          <p>AI 도구와 함께 아이디어를 다듬고, 코드를 고치고, 그림을 만들었어요. 매일 휴대폰으로 직접 플레이해 보면서 글자 크기와 버튼 위치, 주민이 찾아오는 속도를 조금씩 맞췄어요.</p>
+          <p>빈 땅에 침대 하나를 놓고, 이웃이 한 명씩 늘어 가는 걸 지켜보는 즐거움을 담고 싶었어요.</p>
+        </div>
+        <dl class="made">
+          <div><dt>제작</dt><dd>이나은 (1인 개발)</dd></div>
+          <div><dt>맡은 일</dt><dd>기획 · 시스템 구성 · UI 디자인 · 대본 · 테스트</dd></div>
+          <div><dt>함께한 도구</dt><dd>AI 도구 (코드 · 그림)</dd></div>
+          <div><dt>형식</dt><dd>설치 없이 브라우저에서 하는 웹게임 (PWA)</dd></div>
+          <div><dt>지원 기기</dt><dd>휴대폰 · 태블릿 · PC</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 플레이 유도 -->
+  <section class="outro" aria-labelledby="outro-title">
+    <div class="wrap narrow">
+      <img src="assets/hamster/pet-bori.webp" width="256" height="256" loading="lazy" decoding="async" alt="">
+      <h2 id="outro-title">보리가 기다리고 있어요</h2>
+      <p class="lead">배고픈 보리에게 해바라기씨를 건네는 것부터 시작해요.</p>
+      <div class="row">
+        <a class="btn-play" href="https://lee-cloud999.github.io/hamster-village/" target="_blank" rel="noopener">햄스터 마을 놀러 가기 🐹</a>
+        <a class="btn-soft" href="index.html#works">홈페이지로 돌아가기</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer"><div class="wrap"><span>Lee Naeun · Creative Archive</span><span>© 2026 Lee Naeun</span></div><div class="font-credit">이 페이지에는 우아한형제들에서 제공한 배달의민족 주아체가 적용되어 있습니다.</div></footer>
+
+<script>
+(function(){
+  const box=document.querySelector('.has-sub'); if(!box) return;
+  const t=box.querySelector('.sub-toggle');
+  t.addEventListener('click',function(e){
+    if(window.matchMedia('(hover:none)').matches||window.innerWidth<=700){
+      e.preventDefault(); const o=box.classList.toggle('open'); t.setAttribute('aria-expanded',o);
+    }
+  });
+  box.querySelectorAll('.submenu a').forEach(a=>a.addEventListener('click',()=>{box.classList.remove('open');t.setAttribute('aria-expanded','false');}));
+  document.addEventListener('click',e=>{if(!box.contains(e.target)){box.classList.remove('open');t.setAttribute('aria-expanded','false');}});
+})();
+</script>
+</body>
+</html>
