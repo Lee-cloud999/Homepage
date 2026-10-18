@@ -278,6 +278,9 @@
 .cta-music{background:transparent;color:#7d638e;border:1.5px solid #9f85af;padding:10.5px 24px}
 .cta-music:hover{background:#9f85af;color:#fff}
 .hero-inner{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:center}
+.hero{padding:56px 0 60px!important}
+@media(min-width:861px){.hero-player .album-cover{aspect-ratio:16/9}}
+@media(max-width:700px){.hero{padding:44px 0 48px!important}.hero-inner{gap:28px}}
 .hero-side{display:flex;flex-direction:column;gap:14px}
 .hero-new{display:flex;align-items:center;gap:14px;padding:10px 16px 10px 10px;border-radius:20px;background:rgba(255,253,250,.9);border:1px solid var(--line);box-shadow:0 12px 30px rgba(71,58,81,.1);text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s}
 .hero-new:hover,.hero-new:focus-visible{transform:translateY(-2px);box-shadow:0 16px 36px rgba(71,58,81,.16)}
