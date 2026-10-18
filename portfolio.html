@@ -268,6 +268,8 @@
 .submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);min-width:150px;padding:8px;margin-top:6px;background:rgba(255,253,250,.98);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(71,58,81,.12);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:60;display:flex;flex-direction:column;gap:2px}
 .submenu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
 .submenu a{padding:9px 14px;border-radius:9px;white-space:nowrap;font-size:13px}
+.submenu .sub-label{padding:9px 14px 5px;font-size:12px;font-weight:700;letter-spacing:.04em;color:#9a8f96;cursor:default;user-select:none}
+.submenu a.work::before{content:"- ";opacity:.7}
 .submenu a:hover,.submenu a:focus-visible{background:#f1e8f5;color:#86649b}
 .has-sub:hover .submenu,.has-sub:focus-within .submenu,.has-sub.open .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 .has-sub:hover .caret,.has-sub.open .caret{transform:rotate(180deg)}
@@ -304,7 +306,7 @@
 <style id="nav-narrow">@media(max-width:400px){.links{gap:14px;font-size:12.5px}}</style>
 </head>
 <body>
-<header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="index.html">Home</a><a href="index.html#works">Featured Works</a><div class="has-sub"><a href="portfolio.html" class="sub-toggle active" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><a href="portfolio.html" role="menuitem" class="active" aria-current="page">Portfolio</a><a href="hamster-village.html" role="menuitem">햄스터 마을</a><a href="portfolio.html#jellypop-portfolio" role="menuitem">젤리팝</a><a href="portfolio.html#banana-portfolio" role="menuitem">바나나 키우기</a><a href="portfolio.html#yeobaek-portfolio" role="menuitem">여백</a><a href="portfolio.html#geulmat-portfolio" role="menuitem">글맛노트</a><a href="music.html" role="menuitem">Music</a><a href="writing.html" role="menuitem">Writing</a></div></div><a href="about.html">About</a><a href="mailto:ggiyoo@gmail.com" id="contact">Contact</a></nav></div></header>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="index.html">Home</a><a href="index.html#works">Featured Works</a><div class="has-sub"><a href="portfolio.html" class="sub-toggle active" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><a href="portfolio.html" role="menuitem" class="active" aria-current="page">Portfolio</a><a href="hamster-village.html" role="menuitem" class="work">햄스터 마을</a><a href="jellypop.html" role="menuitem" class="work">젤리팝</a><a href="portfolio.html#banana-portfolio" role="menuitem" class="work">바나나 키우기</a><a href="portfolio.html#yeobaek-portfolio" role="menuitem" class="work">여백</a><a href="portfolio.html#geulmat-portfolio" role="menuitem" class="work">글맛노트</a><a href="music.html" role="menuitem">Music</a><a href="writing.html" role="menuitem">Writing</a></div></div><a href="about.html">About</a><a href="mailto:ggiyoo@gmail.com" id="contact">Contact</a></nav></div></header>
 <main>
 <section class="jelly-canva" id="jellypop-portfolio">
   <div class="wrap">

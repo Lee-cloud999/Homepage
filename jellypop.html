@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f2e8f8">
+<title>젤리팝 | 이나은 — 3매치 퍼즐 게임 포트폴리오</title>
+<meta name="description" content="같은 젤리 3개를 맞춰 터뜨리고 털실 여행 지도를 따라 100단계를 나아가는 3매치 퍼즐 게임 '젤리팝'의 소개 페이지예요.">
+<link rel="canonical" href="https://lee-cloud999.github.io/Homepage/jellypop.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Lee Naeun · Creative Archive"><meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="젤리팝 | 이나은"><meta property="og:description" content="털실 여행 지도를 따라 100단계를 나아가는 귀여운 3매치 퍼즐 게임.">
+<meta property="og:url" content="https://lee-cloud999.github.io/Homepage/jellypop.html">
+<meta property="og:image" content="https://lee-cloud999.github.io/Homepage/assets/jellypop/hero.webp"><meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/jellypop/hero.webp" type="image/webp">
+<style>
+/* ---- 홈페이지 공통 (portfolio.html과 같은 값) ---- */
+:root{--ink:#473a51;--muted:#756b78;--lav:#d7c3e3;--paper:#f8f4ef;--white:#fffdfa;--line:#e9e0e8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.75}
+a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%}
+.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
+.site-header{border-bottom:1px solid var(--line);background:rgba(255,253,250,.85)}
+.nav{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font:600 30px/1.1 Georgia,'Times New Roman',serif;letter-spacing:-.8px;white-space:nowrap}
+.brand small{display:block;font:500 9px/1.8 system-ui,sans-serif;letter-spacing:3px;margin-top:7px}
+.links{display:flex;gap:30px;font-size:13px}
+.links a:hover,.links a:focus-visible{color:#86649b}
+.links a.active,.links .sub-toggle.active{color:#86649b}
+.footer{padding:35px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.footer .wrap{display:flex;justify-content:space-between;gap:15px;align-items:center}
+.font-credit{margin-top:18px;font-size:10px;line-height:1.6;color:#9a8f96;opacity:.82;text-align:center}
+.has-sub{position:relative;display:flex;align-items:center}
+.has-sub .caret{font-size:10px;margin-left:2px;display:inline-block;transition:transform .2s}
+.submenu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(6px);min-width:150px;padding:8px;margin-top:6px;background:rgba(255,253,250,.98);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(71,58,81,.12);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:60;display:flex;flex-direction:column;gap:2px}
+.submenu:before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.submenu a{padding:9px 14px;border-radius:9px;white-space:nowrap;font-size:13px}
+.submenu .sub-label{padding:9px 14px 5px;font-size:12px;font-weight:700;letter-spacing:.04em;color:#9a8f96;cursor:default;user-select:none}
+.submenu a.work::before{content:"- ";opacity:.7}
+.submenu a:hover,.submenu a:focus-visible{background:#f1e8f5;color:#86649b}
+.has-sub:hover .submenu,.has-sub:focus-within .submenu,.has-sub.open .submenu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.has-sub:hover .caret,.has-sub.open .caret{transform:rotate(180deg)}
+@media(max-width:700px){
+  .wrap{width:min(100% - 36px,1120px)}
+  .nav{min-height:80px;align-items:flex-start;padding-top:17px;flex-direction:column;gap:14px;padding-bottom:15px}
+  .brand{font-size:26px}.links{gap:20px;flex-wrap:wrap}
+  .submenu{left:0;transform:translateY(6px)}
+  .has-sub:hover .submenu,.has-sub:focus-within .submenu,.has-sub.open .submenu{transform:translateY(0)}
+  .footer .wrap{flex-direction:column;align-items:flex-start}
+}
+
+
+@font-face{font-family:"BM JUA Embedded";src:url("assets/jellypop/jua-subset.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+.jp{--lav:#efe4f7;--lav2:#e4d3f1;--pur:#8a5fb0;--pur-d:#5e3d82;--ink2:#4a3a5c;--pink:#f48fb1;--pink-d:#cf5f89;--soft:#fbf7fc;
+  background:linear-gradient(180deg,#f2e8f8 0,#f9f3fb 420px,var(--paper) 100%);color:var(--ink2);word-break:keep-all}
+.jp h1,.jp h2,.jp h3,.jua{font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-weight:400;letter-spacing:-.01em}
+.jp h2{font-size:clamp(28px,4.4vw,40px);line-height:1.2;margin:0 0 10px;color:var(--pur-d)}
+.jp .lead{margin:0;color:#76668a;font-size:15.5px;max-width:34em}
+.jp section{padding:64px 0}
+.jp .wrap.narrow{width:min(880px,calc(100% - 48px))}
+.btn-play{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--pink);color:#fff;font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-size:19px;box-shadow:0 5px 0 var(--pink-d);transition:transform .12s,box-shadow .12s,background .2s}
+.btn-play:hover{background:#ee7fa4}.btn-play:active{transform:translateY(3px);box-shadow:0 2px 0 var(--pink-d)}
+.btn-soft{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;border:1.5px solid #d9c5e8;color:var(--pur-d);background:#fff;font-size:14.5px;font-weight:600}
+.btn-soft:hover{background:var(--lav)}
+a:focus-visible,button:focus-visible{outline:3px solid #b98ad8;outline-offset:3px;border-radius:12px}
+.jp-hero{padding:34px 0 56px}
+.hero-art{position:relative;border-radius:28px;overflow:hidden;background:#d9c3ec;aspect-ratio:2/1;box-shadow:0 18px 40px rgba(94,61,130,.18)}
+.hero-art img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-title{position:absolute;left:39%;top:42.5%;transform:translate(-50%,-50%);margin:0;color:var(--pur);font-size:clamp(34px,9.4vw,106px);line-height:1;white-space:nowrap;text-shadow:0 .04em 0 rgba(255,255,255,.7)}
+.hero-copy{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin-top:30px}
+.hero-copy p.intro{margin:0;font-size:clamp(17px,2.1vw,21px);line-height:1.7;max-width:30em}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.facts li{padding:5px 13px;border-radius:999px;background:var(--lav);border:1px solid #dcc9ec;font-size:13px;color:#6d4a92}
+.facts li.hl{background:#ffe3ee;border-color:#f7c3d6;color:#b24b78}
+.hero-cta{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.hero-cta small{font-size:12px;color:#9a89ad}
+.cast{background:#fdf3ed!important;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:30px;align-items:center;margin-top:30px;background:#fff;border:1px solid #eadcf3;border-radius:28px;padding:28px}
+.cast img{display:block;width:100%;height:auto}
+.cast .star{max-width:300px;margin:auto}
+.loop{display:grid;gap:22px;margin-top:30px;list-style:none;padding:0}
+.step{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:28px;align-items:center;background:#fff;border:1px solid #eadcf3;border-radius:26px;padding:26px}
+.step:nth-child(even) .step-img{order:-1}
+.step-no{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#ffd6e5;color:#b24b78;font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-size:18px;margin-bottom:10px}
+.step h3{font-size:clamp(22px,3vw,27px);margin:0 0 6px;color:var(--pur-d)}
+.step p{margin:0;color:#76668a;font-size:15px}
+.dot{font-family:system-ui,sans-serif;margin:0 .35em}
+.step p+p{margin-top:8px}
+.step-img{border-radius:18px;overflow:hidden;background:var(--lav);border:1px solid #e4d3f1;display:flex;justify-content:center;align-items:center;gap:12px;padding:16px}
+.step-img img{display:block;height:auto;max-width:100%;border-radius:12px}
+.step-img.two img{width:calc(50% - 6px)}
+.step-img .one{width:min(100%,360px)}
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:30px 0 0;padding:0;list-style:none}
+.shot figure{margin:0}
+.shot .frame{border-radius:20px;padding:8px;background:#5e3d82;box-shadow:0 16px 34px rgba(94,61,130,.22)}
+.shot img{display:block;width:100%;height:auto;border-radius:14px;background:var(--lav)}
+.shot figcaption{margin-top:14px;text-align:center}
+.shot figcaption b{display:block;font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-weight:400;font-size:20px;color:var(--pur-d)}
+.shot figcaption span{font-size:13.5px;color:#85749a}
+.stage-box{display:grid;grid-template-columns:auto minmax(0,1fr);gap:34px;align-items:center;background:#fff;border:1px solid #e4d3f1;border-radius:30px;padding:34px}
+.lv-badge{width:150px;height:150px;border-radius:50%;display:grid;place-content:center;text-align:center;background:radial-gradient(circle at 35% 30%,#d8bdf0,#a77dd0 62%,#8a5fb0);color:#fff;box-shadow:0 0 0 7px #fff,0 0 0 9px #dcc9ec}
+.lv-badge strong{font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-weight:400;font-size:60px;line-height:.9}
+.lv-badge small{font-family:"BM JUA Embedded","Noto Sans KR",sans-serif;font-size:17px;opacity:.95}
+.stage-box ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.stage-box li{position:relative;padding-left:22px;font-size:15px;color:#76668a}
+.stage-box li::before{content:"";position:absolute;left:4px;top:.72em;width:8px;height:8px;border-radius:50%;background:var(--pink)}
+.story{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px;align-items:start}
+.story p{margin:0 0 14px;font-size:15.5px;color:#66557a}
+.made{margin:0;padding:22px 24px;border-radius:22px;background:var(--lav);border:1px solid #dcc9ec;display:grid;gap:12px}
+.made div{display:grid;grid-template-columns:6.4em minmax(0,1fr);gap:10px;font-size:14px}
+.made dt{font-weight:700;color:#6d4a92}.made dd{margin:0;color:#66557a}
+.outro{text-align:center;padding:72px 0 84px!important}
+.outro img{width:170px;height:auto;display:block;margin:0 auto 14px;border-radius:30px}
+.outro .lead{margin:0 auto 26px}
+.outro .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+@media(max-width:900px){.cast{grid-template-columns:1fr}.story{grid-template-columns:1fr;gap:22px}}
+@media(max-width:700px){
+  .jp section{padding:48px 0}.jp .wrap.narrow{width:min(100% - 36px,880px)}
+  .jp-hero{padding:20px 0 40px}.hero-art{border-radius:20px}
+  .hero-copy{grid-template-columns:1fr;gap:22px;margin-top:22px}
+  .hero-cta{align-items:stretch}.hero-cta small{text-align:center}.btn-play{width:100%}
+  .cast{padding:20px;border-radius:22px}
+  .step{grid-template-columns:1fr;gap:16px;padding:18px;border-radius:22px}.step:nth-child(even) .step-img{order:0}
+  .shots{grid-template-columns:1fr;gap:28px}
+  .stage-box{grid-template-columns:1fr;justify-items:center;text-align:left;padding:26px 20px;gap:22px}
+  .lv-badge{width:124px;height:124px}.lv-badge strong{font-size:50px}
+  .outro .row a{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="index.html">Home</a><a href="index.html#works">Featured Works</a><div class="has-sub"><a href="portfolio.html" class="sub-toggle active" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><span class="sub-label" aria-hidden="true">Portfolio</span><a href="hamster-village.html" role="menuitem" class="work">햄스터 마을</a><a href="jellypop.html" role="menuitem" class="work active" aria-current="page">젤리팝</a><a href="portfolio.html#banana-portfolio" role="menuitem" class="work">바나나 키우기</a><a href="portfolio.html#yeobaek-portfolio" role="menuitem" class="work">여백</a><a href="portfolio.html#geulmat-portfolio" role="menuitem" class="work">글맛노트</a><a href="music.html" role="menuitem">Music</a><a href="writing.html" role="menuitem">Writing</a></div></div><a href="about.html">About</a><a href="mailto:ggiyoo@gmail.com" id="contact">Contact</a></nav></div></header>
+<main class="jp">
+  <section class="jp-hero" aria-labelledby="jp-title"><div class="wrap">
+    <div class="hero-art">
+      <img src="assets/jellypop/hero.webp" width="1600" height="800" alt="털실로 만든 보라색 세상에서 별 젤리와 친구들이 포털로 이어지는 길 위에 모여 있어요" fetchpriority="high">
+      <h1 class="hero-title" id="jp-title">젤리팝</h1>
+    </div>
+    <div class="hero-copy">
+      <div>
+        <p class="intro">같은 젤리 3개를 맞춰 터뜨리고, 털실 여행 지도를 따라 별과 함께 떠나는 귀여운 3매치 퍼즐 게임.</p>
+        <ul class="facts" aria-label="게임 정보"><li>3매치 퍼즐</li><li>털실 여행 지도</li><li>나만의 털실방 꾸미기</li><li class="hl">총 100단계</li></ul>
+      </div>
+      <div class="hero-cta">
+        <a class="btn-play" href="https://lee-cloud999.github.io/jellypop/" target="_blank" rel="noopener">게임 플레이하기</a>
+        <small>설치 없이 브라우저에서 바로 열려요 (PWA)</small>
+      </div>
+    </div>
+  </div></section>
+
+  <section aria-labelledby="cast-title"><div class="wrap narrow">
+    <h2 id="cast-title">주인공은 별!</h2>
+    <p class="lead">털실 여행의 주인공 별 젤리가 다양한 젤리 친구들과 함께 길을 따라 여행해요.</p>
+    <div class="cast">
+      <img class="star" src="assets/jellypop/star.webp" width="700" height="634" loading="lazy" decoding="async" alt="반짝이는 노란 별 젤리 주인공">
+      <img src="assets/jellypop/friends.webp" width="800" height="800" loading="lazy" decoding="async" alt="빨강 젤리빈, 초록 잎, 파랑 물방울, 보라 다이아, 분홍 하트, 줄무늬 젤리, 딸기, 클로버 친구들">
+    </div>
+  </div></section>
+
+  <section aria-labelledby="play-title" style="padding-top:0"><div class="wrap narrow">
+    <h2 id="play-title">이렇게 놀아요</h2>
+    <p class="lead">맞추고, 길을 따라 나아가고, 보상으로 나만의 방을 채워 가요.</p>
+    <ol class="loop">
+      <li class="step"><div><span class="step-no" aria-hidden="true">1</span><h3>같은 젤리 3개 맞추기</h3><p>같은 젤리 세 개를 나란히 맞추면 팡 터져요. 단계마다 정해진 목표를 남은 이동 횟수 안에 달성하면 클리어!</p></div>
+        <div class="step-img"><img src="assets/jellypop/phones-intro.webp" width="900" height="891" loading="lazy" decoding="async" alt="젤리가 가득한 3매치 플레이 화면 두 장"></div></li>
+      <li class="step"><div><span class="step-no" aria-hidden="true">2</span><h3>포털로 이어지는 챕터 이동</h3><p>10단계를 끝내면 포털이 열려요. 별이 털실 길을 따라 출발해 새로운 챕터로 이동해요.</p></div>
+        <div class="step-img two"><img src="assets/jellypop/portal-end.webp" width="500" height="813" loading="lazy" decoding="async" alt="챕터 끝에 포털이 열린 털실 여행 지도"><img src="assets/jellypop/map-portal.webp" width="600" height="1018" loading="lazy" decoding="async" alt="별이 털실 뭉치를 지나 다음 챕터로 가는 털실 여행 지도"></div></li>
+      <li class="step"><div><span class="step-no" aria-hidden="true">3</span><h3>특수 젤리와 손가락 튜토리얼</h3><p>줄무늬 젤리는 한 줄을 시원하게 정리하고, 폭탄 젤리는 주변을 한 번에 터뜨려요. 무지개 젤리는 원하는 색으로 바꾸고, 날개 젤리는 날아가며 더 넓게 효과를 내요.</p><p>처음 만나는 규칙은 손가락 시연 튜토리얼로 직접 따라 하며 배워요.</p></div>
+        <div class="step-img"><img src="assets/jellypop/special.webp" width="900" height="771" loading="lazy" decoding="async" alt="손가락 시연 튜토리얼이 나오는 3매치 화면 두 장"></div></li>
+      <li class="step"><div><span class="step-no" aria-hidden="true">4</span><h3>다채로운 기믹</h3><p>얼음, 얼룩, 상자, 열쇠, 털실. 새로운 기믹은 연습 단계에서 기본 규칙을 익히고, 하나씩 도입되며, 단계별 전략으로 이어지게 구성했어요.</p></div>
+        <div class="step-img"><img class="one" src="assets/jellypop/gimmicks.webp" width="700" height="922" loading="lazy" decoding="async" alt="얼음, 얼룩, 상자, 열쇠, 털실 기믹 아이콘과 설명"></div></li>
+      <li class="step"><div><span class="step-no" aria-hidden="true">5</span><h3>출석<span class="dot">·</span>이벤트<span class="dot">·</span>룰렛</h3><p>매일 들어오는 재미를 위한 보상 기능이 지도 양옆에 있어요. 출석하면 선물을 받고, 이벤트 미션을 채우면 보상을, 행운 룰렛을 돌리면 선물을 받아요.</p></div>
+        <div class="step-img"><img class="one" src="assets/jellypop/roulette.webp" width="560" height="1184" loading="lazy" decoding="async" alt="지도 위에 행운 룰렛이 열린 화면"></div></li>
+      <li class="step"><div><span class="step-no" aria-hidden="true">6</span><h3>보상과 털실방 꾸미기</h3><p>별과 코인을 모아 보상을 받고, 새 가구로 털실방을 꾸며요. 털실 여행 지도를 따라가며 새로운 테마가 열리고, 나만의 공간이 완성돼요.</p></div>
+        <div class="step-img"><img class="one" src="assets/jellypop/room.webp" width="620" height="1016" loading="lazy" decoding="async" alt="보라색 털실 벽지와 분홍 소파, 러그로 꾸민 털실방"></div></li>
+    </ol>
+  </div></section>
+
+  <section aria-labelledby="shots-title" style="background:#fff;border-top:1px solid #eadcf3;border-bottom:1px solid #eadcf3"><div class="wrap narrow">
+    <h2 id="shots-title">실제 게임 화면</h2>
+    <p class="lead">게임에서 그대로 캡처한 화면이에요.</p>
+    <ul class="shots">
+      <li class="shot"><figure><div class="frame"><img src="assets/jellypop/shot-map.webp" width="1363" height="936" loading="lazy" decoding="async" alt="털실 길과 출석, 이벤트, 룰렛, 상점, 털실방 버튼이 있는 털실 여행 지도 화면"></div><figcaption><b>털실 여행 지도</b><span>1장 · 말랑한 시작</span></figcaption></figure></li>
+      <li class="shot"><figure><div class="frame"><img src="assets/jellypop/shot-play.webp" width="1363" height="936" loading="lazy" decoding="async" alt="별, 빨강, 초록, 파랑 젤리가 놓인 1단계 3매치 플레이 화면"></div><figcaption><b>1단계 도전</b><span>초록 잎 5개 모으기</span></figcaption></figure></li>
+    </ul>
+  </div></section>
+
+  <section aria-labelledby="stage-title"><div class="wrap narrow">
+    <div class="stage-box">
+      <div class="lv-badge" aria-hidden="true"><small>총</small><strong>100</strong><small>단계</small></div>
+      <div>
+        <h2 id="stage-title">100단계의 털실 여행</h2>
+        <p class="lead">쉬운 단계부터 어려운 단계까지, 별과 함께 걸어가는 긴 여행이에요.</p>
+        <ul>
+          <li>지도에서 단계 난이도를 한눈에 볼 수 있어요. (아주 쉬움 · 보통 · 어려움)</li>
+          <li>새 가구와 보상 상자가 놓인 단계를 따라가며 보상을 모아요.</li>
+          <li>10단계를 끝낼 때마다 포털이 열리고 새 챕터가 시작돼요.</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section aria-labelledby="dev-title" style="padding-top:0"><div class="wrap narrow">
+    <div class="story">
+      <div>
+        <h2 id="dev-title">만든 이야기</h2>
+        <p>젤리팝은 게임 기획자로서 직접 만든 3매치 퍼즐 게임이에요. 단계 구성과 기믹의 순서, 보상 흐름을 설계했어요.</p>
+        <p>AI 도구와 함께 개발하고 그림과 음악을 만들었어요. 처음 만나는 기믹은 연습 단계에서 쉽게 익히고, 하나씩 늘려 가며 스스로 전략을 찾도록 만드는 데 신경 썼어요.</p>
+      </div>
+      <dl class="made">
+        <div><dt>기획</dt><dd>이나은</dd></div>
+        <div><dt>함께한 도구</dt><dd>개발 Claude · 이미지 ChatGPT · BGM Suno</dd></div>
+        <div><dt>형식</dt><dd>단일 HTML 파일 · PWA 지원</dd></div>
+        <div><dt>배포</dt><dd>Google Play TWA 배포 예정</dd></div>
+        <div><dt>지원 기기</dt><dd>Android · iPad · Windows 브라우저에서 실행 확인</dd></div>
+      </dl>
+    </div>
+  </div></section>
+
+  <section class="outro" aria-labelledby="outro-title"><div class="wrap narrow">
+    <img src="assets/jellypop/chest.webp" width="420" height="380" loading="lazy" decoding="async" alt="">
+    <h2 id="outro-title">직접 해보기!</h2>
+    <p class="lead">별 젤리와 첫 단계부터 시작해 보세요.</p>
+    <div class="row">
+      <a class="btn-play" href="https://lee-cloud999.github.io/jellypop/" target="_blank" rel="noopener">젤리팝 놀러 가기 ⭐</a>
+      <a class="btn-soft" href="index.html#works">홈페이지로 돌아가기</a>
+    </div>
+  </div></section>
+</main>
+<footer class="footer"><div class="wrap"><span>Lee Naeun · Creative Archive</span><span>© 2026 Lee Naeun</span></div><div class="font-credit">이 페이지에는 우아한형제들에서 제공한 배달의민족 주아체가 적용되어 있습니다.</div></footer>
+
+<script>
+(function(){
+  const box=document.querySelector('.has-sub'); if(!box) return;
+  const t=box.querySelector('.sub-toggle');
+  t.addEventListener('click',function(e){
+    if(window.matchMedia('(hover:none)').matches||window.innerWidth<=700){
+      e.preventDefault(); const o=box.classList.toggle('open'); t.setAttribute('aria-expanded',o);
+    }
+  });
+  box.querySelectorAll('.submenu a').forEach(a=>a.addEventListener('click',()=>{box.classList.remove('open');t.setAttribute('aria-expanded','false');}));
+  document.addEventListener('click',e=>{if(!box.contains(e.target)){box.classList.remove('open');t.setAttribute('aria-expanded','false');}});
+})();
+</script>
+</body>
