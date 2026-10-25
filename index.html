@@ -264,14 +264,16 @@
 .play-badge{display:inline-flex;align-items:center;gap:6px;margin:2px 0 8px;padding:5px 11px;border-radius:999px;background:#e8f3ec;color:#2f6b4a;border:1px solid #bfdcc9;font-size:12px;font-weight:700;letter-spacing:.01em;white-space:nowrap}.play-badge::before{content:"";width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #34a853}
 
 /* Hero 배경 패럴랙스 3겹 (뒤 40px · 중간 90px · 앞 160px, 모션 줄이기에서는 정지) */
-.hero:after,.hero:before{display:none!important}
+.hero:after{display:none!important}
 .hero{min-height:min(84vh,760px);display:flex;align-items:center}
 .hero>.wrap.hero-inner{width:min(1120px,calc(100% - 48px))}
 .hero-px{position:absolute;inset:-170px 0 -20px 0;z-index:0;pointer-events:none;overflow:visible}
 .hero-px i{position:absolute;inset:0;display:block;background-repeat:no-repeat;background-position:center;background-size:cover;transform:translate3d(0,var(--py,0px),0);will-change:transform}
-.hero-px .l1{background-image:url(assets/parallax/mist.webp);opacity:.9}
-.hero-px .l2{background-image:url(assets/parallax/ovals.webp);opacity:.8}
-.hero-px .l3{background-image:url(assets/parallax/lines.webp);opacity:.9}
+.hero:before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(253,251,248,.86) 0,rgba(253,251,248,.6) 42%,rgba(253,251,248,0) 72%)}
+.hero-px .l1{background-image:url(assets/parallax/bg.webp);opacity:.55}
+.hero-px .l2{background-image:url(assets/parallax/blobs.webp);opacity:.95}
+.hero-px .l3{background-image:url(assets/parallax/props.webp);opacity:1}
+@media(max-width:700px){.hero:before{background:linear-gradient(180deg,rgba(253,251,248,.8) 0,rgba(253,251,248,.55) 45%,rgba(253,251,248,0) 78%)}}
 @media(max-width:700px){.hero-px .l1{background-position:30% center}.hero-px .l2{background-position:60% center}}
 @media(prefers-reduced-motion:reduce){.hero-px i{transform:none!important;will-change:auto}}
 /* Sticky Header: 스크롤해도 메뉴가 위에 고정 */
@@ -361,10 +363,6 @@ font-family:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","Batang",serif;
 .site-header{background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,253,250,.52))!important;-webkit-backdrop-filter:blur(18px) saturate(1.5)!important;backdrop-filter:blur(18px) saturate(1.5)!important;border-bottom:1px solid rgba(255,255,255,.7)!important;box-shadow:0 6px 24px rgba(94,61,130,.08)}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-header{background:rgba(255,253,250,.97)!important}}
 /* Glassmorphism: 음악 플레이어 · NEW 카드 (CSS만, 새 이미지 없음) */
-.hero-px:before,.hero-px:after{content:"";position:absolute;border-radius:50%;filter:blur(8px);pointer-events:none}
-.hero-px:before{width:300px;height:300px;right:11%;top:22%;background:radial-gradient(circle at 35% 30%,#f7b9d6,#d48fcf 70%);opacity:.75}
-.hero-px:after{width:240px;height:240px;right:2%;bottom:14%;background:radial-gradient(circle at 40% 35%,#b9a2f0,#8d6bd0 72%);opacity:.7}
-@media(max-width:700px){.hero-px:before{width:200px;height:200px;right:-30px;top:44%}.hero-px:after{width:170px;height:170px;right:auto;left:-40px;bottom:6%}}
 .hero-player,.hero-new{background:linear-gradient(135deg,rgba(255,255,255,.58),rgba(255,255,255,.2))!important;-webkit-backdrop-filter:blur(18px) saturate(1.7);backdrop-filter:blur(18px) saturate(1.7);border:1px solid rgba(255,255,255,.7)!important;box-shadow:0 12px 36px rgba(94,61,130,.2),inset 0 1px 0 rgba(255,255,255,.85)!important}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.hero-player,.hero-new{background:rgba(255,253,250,.95)!important}}
 </style>
