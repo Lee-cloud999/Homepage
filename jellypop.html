@@ -132,8 +132,8 @@ html{scroll-padding-top:96px}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-header{background:rgba(255,253,250,.97)!important}}
 /* Scroll snap: 섹션마다 부드럽게 정렬 (proximity: 가까이 멈출 때만 붙어서 긴 섹션도 자유롭게 읽힘) */
 html{scroll-snap-type:y proximity}
-main>section,.footer{scroll-snap-align:start;scroll-margin-top:92px}
-@media(min-width:701px) and (min-height:560px){main>section{min-height:calc(100svh - 92px);display:flex;flex-direction:column;justify-content:center}main>section>.wrap{width:min(1120px,calc(100% - 48px));margin-left:auto;margin-right:auto}main>section>.wrap.narrow{width:min(880px,calc(100% - 48px))}}
+main>section,.footer{scroll-snap-align:start}
+@media(min-width:701px) and (min-height:560px){main>section{min-height:calc(100svh - 96px);display:flex;flex-direction:column;justify-content:center}main>section>.wrap{width:min(1120px,calc(100% - 48px));margin-left:auto;margin-right:auto}main>section>.wrap.narrow{width:min(880px,calc(100% - 48px))}}
 @media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}}
 </style>
 </head>

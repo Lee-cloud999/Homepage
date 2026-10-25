@@ -365,6 +365,10 @@ font-family:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","Batang",serif;
 /* Glassmorphism: 음악 플레이어 · NEW 카드 (CSS만, 새 이미지 없음) */
 .hero-player,.hero-new{background:linear-gradient(135deg,rgba(255,255,255,.58),rgba(255,255,255,.2))!important;-webkit-backdrop-filter:blur(18px) saturate(1.7);backdrop-filter:blur(18px) saturate(1.7);border:1px solid rgba(255,255,255,.7)!important;box-shadow:0 12px 36px rgba(94,61,130,.2),inset 0 1px 0 rgba(255,255,255,.85)!important}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.hero-player,.hero-new{background:rgba(255,253,250,.95)!important}}
+/* Scroll snap: 홈 섹션 정렬 */
+html{scroll-snap-type:y proximity}
+main>section,.footer{scroll-snap-align:start}
+@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&text=%EC%97%AC%EB%B0%B1%EA%B8%80%EB%A7%9B%EB%85%B8%ED%8A%B8%28BETA%29&display=swap"></head>
 <body>
