@@ -263,11 +263,15 @@
 
 .play-badge{display:inline-flex;align-items:center;gap:6px;margin:2px 0 8px;padding:5px 11px;border-radius:999px;background:#e8f3ec;color:#2f6b4a;border:1px solid #bfdcc9;font-size:12px;font-weight:700;letter-spacing:.01em;white-space:nowrap}.play-badge::before{content:"";width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #34a853}
 
-/* Hero 배경 장식: 아주 약한 패럴랙스 (모바일은 더 약하게, 모션 줄이기 설정에서는 끔) */
-.hero:after{transform:translate3d(0,var(--hero-py,0px),0);will-change:transform}
-.hero:before{content:'';position:absolute;width:150px;height:150px;border-radius:50%;left:-50px;bottom:30px;background:radial-gradient(circle at 35% 30%,#efe3f4,#dcc7e8 70%);opacity:.55;pointer-events:none;transform:translate3d(0,var(--hero-py2,0px),0);will-change:transform}
-@media(max-width:700px){.hero:after{right:-150px;opacity:.75}}
-@media(prefers-reduced-motion:reduce){.hero:after,.hero:before{transform:none!important;will-change:auto}}
+/* Hero 배경 패럴랙스 3겹 (뒤 8px · 중간 16px · 앞 24px, 모션 줄이기에서는 정지) */
+.hero:after,.hero:before{display:none!important}
+.hero-px{position:absolute;inset:-30px 0;z-index:0;pointer-events:none;overflow:visible}
+.hero-px i{position:absolute;inset:0;display:block;background-repeat:no-repeat;background-position:center;background-size:cover;transform:translate3d(0,var(--py,0px),0);will-change:transform}
+.hero-px .l1{background-image:url(assets/parallax/mist.webp);opacity:.9}
+.hero-px .l2{background-image:url(assets/parallax/ovals.webp);opacity:.8}
+.hero-px .l3{background-image:url(assets/parallax/lines.webp);opacity:.9}
+@media(max-width:700px){.hero-px .l1{background-position:30% center}.hero-px .l2{background-position:60% center}}
+@media(prefers-reduced-motion:reduce){.hero-px i{transform:none!important;will-change:auto}}
 </style>
 <style id="submenu-style">
 .has-sub{position:relative;display:flex;align-items:center}
@@ -351,7 +355,7 @@ font-family:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","Batang",serif;
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&text=%EC%97%AC%EB%B0%B1%EA%B8%80%EB%A7%9B%EB%85%B8%ED%8A%B8%28BETA%29&display=swap"></head>
 <body>
 <header class="site-header"><div class="wrap nav"><a class="brand" href="#home" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="#home">Home</a><a href="#works">Featured Works</a><div class="has-sub"><a href="portfolio.html" class="sub-toggle" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><span class="sub-label" aria-hidden="true">Portfolio</span><a href="hamster-village.html" role="menuitem" class="work">햄스터 마을</a><a href="jellypop.html" role="menuitem" class="work">젤리팝</a><a href="portfolio.html#banana-portfolio" role="menuitem" class="work">바나나 키우기</a><a href="portfolio.html#yeobaek-portfolio" role="menuitem" class="work">여백</a><a href="portfolio.html#geulmat-portfolio" role="menuitem" class="work">글맛노트</a><a href="music.html" role="menuitem">Music</a><a href="writing.html" role="menuitem">Writing</a></div></div><a href="about.html">About</a><a href="mailto:ggiyoo@gmail.com" id="contact">Contact</a></nav></div></header>
-<main><section class="hero" id="home"><div class="wrap hero-inner"><div class="hero-text"><div class="eyebrow">A little world of creativity</div><h1>재미있는 것을 찾아<br>만들고 나눕니다.</h1><p class="intro">가사에도, 글에도, 게임에도<br>재미를 담는 개인 창작 공간입니다.</p></div>
+<main><section class="hero" id="home"><div class="hero-px" aria-hidden="true"><i class="l1"></i><i class="l2"></i><i class="l3"></i></div><div class="wrap hero-inner"><div class="hero-text"><div class="eyebrow">A little world of creativity</div><h1>재미있는 것을 찾아<br>만들고 나눕니다.</h1><p class="intro">가사에도, 글에도, 게임에도<br>재미를 담는 개인 창작 공간입니다.</p></div>
 <div class="hero-side"><aside class="hero-player" aria-label="대표곡 플레이어"><div class="album-cover cover-lyrics"><div class="cover-copy"><small>SONG</small><strong>가사만<br>써볼게</strong></div></div><div class="hp-meta"><span class="hp-label">NOW PLAYING</span><strong class="hp-title">가사만 써볼게</strong><small class="hp-sub">Lyrics 이나은 · Music Suno</small><div class="demo-controls"><button class="demo-play" type="button" aria-label="재생" data-src="assets/gasaman-sseobolge.mp3">▶</button><div class="demo-track" role="progressbar" aria-label="재생 위치" style="cursor:pointer"><span></span></div><span class="demo-time">0:00 / 3:29</span></div></div></aside><a class="hero-new" href="hamster-village.html" aria-label="햄스터 마을 새로 나왔어요"><img src="assets/hamster-banner.jpg?v=2" alt="" width="96" height="96"><span class="hn-text"><span class="new-badge hn-badge">NEW</span><strong>햄스터 마을</strong><small>새로 나왔어요!</small></span><span class="hn-arrow" aria-hidden="true">→</span></a></div></div></section>
 <section class="section" id="works"><div class="wrap"><div class="section-head"><h2>Featured Works</h2><p>좋아하는 것들을 하나씩, 꾸준히.</p></div><div class="cards">
 <article class="card"><a class="gallery-link" href="hamster-village.html" aria-label="햄스터 마을 소개 보기"><img class="gallery-image" src="assets/hamster-banner.jpg?v=2" alt="지도를 안고 웃는 보리와 팔짱 끼고 째려보는 콩이, 꽃이 핀 햄스터 마을" loading="lazy"><span class="new-badge" aria-label="새 작품">NEW</span><span class="hamster-banner-title" aria-hidden="true">햄스터 마을</span></a><div class="card-body"><div class="tag">GAME</div><h3>햄스터 마을</h3><p>작은 햄스터들과 함께 재료를 합치고, 부탁을 들어주고, 마을을 꾸며 나가는 포근한 머지 게임.</p><div class="card-actions"><a class="project-link" href="hamster-village.html">포트폴리오 보기 →</a><a class="project-link" href="https://lee-cloud999.github.io/hamster-village/" target="_blank" rel="noopener">직접 플레이 ↗</a></div></div></article>
@@ -526,17 +530,16 @@ font-family:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","Batang",serif;
 <script>
 (function(){
   var hero=document.getElementById('home'); if(!hero) return;
-  var mq=window.matchMedia('(prefers-reduced-motion: reduce)'); if(mq.matches) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var L=[['l1',8],['l2',16],['l3',24]].map(function(p){return [hero.querySelector('.hero-px .'+p[0]),p[1]];});
   var ticking=false;
   function update(){
     ticking=false;
-    var m=window.innerWidth<=700, k=m?0.22:0.12, max=m?70:50;
-    var y=Math.min(window.scrollY,hero.offsetHeight+200);
-    hero.style.setProperty('--hero-py',Math.min(y*k,max).toFixed(1)+'px');
-    hero.style.setProperty('--hero-py2',(-Math.min(y*k*0.8,max*0.8)).toFixed(1)+'px');
+    var y=Math.max(0,Math.min(window.scrollY/Math.max(hero.offsetHeight,1),1)); /* 0~1: 히어로를 지나가는 정도 */
+    L.forEach(function(l){ if(l[0]) l[0].style.setProperty('--py',(y*l[1]).toFixed(1)+'px'); });
   }
   window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
-  window.addEventListener('resize',update);
+  window.addEventListener('resize',update); update();
 })();
 </script>
 </body></html>
