@@ -335,5 +335,37 @@ html{scroll-padding-top:96px}
   document.addEventListener('click',e=>{if(!box.contains(e.target)){box.classList.remove('open');t.setAttribute('aria-expanded','false');}});
 })();
 </script>
+<style>
+/* Scroll reveal: 섹션이 화면에 들어오면 아래에서 살짝 올라오며 나타남 */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rv-d,0s)}
+.rv.rv-in{opacity:1;transform:none}
+</style>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var secs=[].slice.call(document.querySelectorAll('main section')).slice(1),items=[];
+  secs.forEach(function(sec){
+    var wrap=sec.querySelector('.wrap')||sec;
+    [].slice.call(wrap.children).forEach(function(el){
+      if((el.tagName==='UL'||el.tagName==='OL')&&el.children.length){
+        [].slice.call(el.children).forEach(function(li,k){li.style.setProperty('--rv-d',Math.min(k,6)*0.08+'s');items.push(li);});
+      }else items.push(el);
+    });
+  });
+  var vh=window.innerHeight;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;var el=e.target;io.unobserve(el);
+      el.classList.add('rv-in');
+      setTimeout(function(){el.classList.remove('rv','rv-in');el.style.removeProperty('--rv-d');},1300);
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.12});
+  items.forEach(function(el){
+    if(el.getBoundingClientRect().top<vh*0.92)return; /* 처음부터 보이는 건 그대로 */
+    el.classList.add('rv');io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
