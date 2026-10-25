@@ -265,7 +265,9 @@
 
 /* Hero 배경 장식: 아주 약한 패럴랙스 (모바일은 더 약하게, 모션 줄이기 설정에서는 끔) */
 .hero:after{transform:translate3d(0,var(--hero-py,0px),0);will-change:transform}
-@media(prefers-reduced-motion:reduce){.hero:after{transform:none!important;will-change:auto}}
+.hero:before{content:'';position:absolute;width:150px;height:150px;border-radius:50%;left:-50px;bottom:30px;background:radial-gradient(circle at 35% 30%,#efe3f4,#dcc7e8 70%);opacity:.55;pointer-events:none;transform:translate3d(0,var(--hero-py2,0px),0);will-change:transform}
+@media(max-width:700px){.hero:after{right:-150px;opacity:.75}}
+@media(prefers-reduced-motion:reduce){.hero:after,.hero:before{transform:none!important;will-change:auto}}
 </style>
 <style id="submenu-style">
 .has-sub{position:relative;display:flex;align-items:center}
@@ -528,9 +530,10 @@ font-family:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","Batang",serif;
   var ticking=false;
   function update(){
     ticking=false;
-    var k=window.innerWidth<=700?0.04:0.12, max=window.innerWidth<=700?14:50;
+    var m=window.innerWidth<=700, k=m?0.22:0.12, max=m?70:50;
     var y=Math.min(window.scrollY,hero.offsetHeight+200);
     hero.style.setProperty('--hero-py',Math.min(y*k,max).toFixed(1)+'px');
+    hero.style.setProperty('--hero-py2',(-Math.min(y*k*0.8,max*0.8)).toFixed(1)+'px');
   }
   window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
   window.addEventListener('resize',update);
