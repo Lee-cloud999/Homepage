@@ -169,6 +169,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #e39a6a;outline-offset:3p
 .site-header{position:sticky;top:0;z-index:100;background:rgba(255,253,250,.97);-webkit-backdrop-filter:saturate(1.2) blur(10px);backdrop-filter:saturate(1.2) blur(10px)}
 html{scroll-padding-top:96px}
 @media(max-width:700px){html{scroll-padding-top:128px}.site-header .nav{min-height:0;padding-top:10px;padding-bottom:10px;gap:8px}.site-header .brand{font-size:22px}.site-header .brand small{margin-top:3px}.site-header .links{gap:16px}}
+/* Glassmorphism: 상단 메뉴 */
+.site-header{background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,253,250,.52))!important;-webkit-backdrop-filter:blur(18px) saturate(1.5)!important;backdrop-filter:blur(18px) saturate(1.5)!important;border-bottom:1px solid rgba(255,255,255,.7)!important;box-shadow:0 6px 24px rgba(94,61,130,.08)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-header{background:rgba(255,253,250,.97)!important}}
 </style>
 </head>
 <body>

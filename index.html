@@ -357,7 +357,17 @@ font-family:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","Batang",serif;
 @media(max-width:1180px){.pc-br{display:none}}
 @media(max-width:389px){.hero h1{font-size:30px}}
 </style>
-<style id="nav-narrow">@media(max-width:400px){.links{gap:14px;font-size:12.5px}}</style>
+<style id="nav-narrow">@media(max-width:400px){.links{gap:14px;font-size:12.5px}}/* Glassmorphism: 상단 메뉴 */
+.site-header{background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,253,250,.52))!important;-webkit-backdrop-filter:blur(18px) saturate(1.5)!important;backdrop-filter:blur(18px) saturate(1.5)!important;border-bottom:1px solid rgba(255,255,255,.7)!important;box-shadow:0 6px 24px rgba(94,61,130,.08)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-header{background:rgba(255,253,250,.97)!important}}
+/* Glassmorphism: 음악 플레이어 · NEW 카드 (CSS만, 새 이미지 없음) */
+.hero-px:before,.hero-px:after{content:"";position:absolute;border-radius:50%;filter:blur(8px);pointer-events:none}
+.hero-px:before{width:300px;height:300px;right:11%;top:22%;background:radial-gradient(circle at 35% 30%,#f7b9d6,#d48fcf 70%);opacity:.75}
+.hero-px:after{width:240px;height:240px;right:2%;bottom:14%;background:radial-gradient(circle at 40% 35%,#b9a2f0,#8d6bd0 72%);opacity:.7}
+@media(max-width:700px){.hero-px:before{width:200px;height:200px;right:-30px;top:44%}.hero-px:after{width:170px;height:170px;right:auto;left:-40px;bottom:6%}}
+.hero-player,.hero-new{background:linear-gradient(135deg,rgba(255,255,255,.58),rgba(255,255,255,.2))!important;-webkit-backdrop-filter:blur(18px) saturate(1.7);backdrop-filter:blur(18px) saturate(1.7);border:1px solid rgba(255,255,255,.7)!important;box-shadow:0 12px 36px rgba(94,61,130,.2),inset 0 1px 0 rgba(255,255,255,.85)!important}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.hero-player,.hero-new{background:rgba(255,253,250,.95)!important}}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&text=%EC%97%AC%EB%B0%B1%EA%B8%80%EB%A7%9B%EB%85%B8%ED%8A%B8%28BETA%29&display=swap"></head>
 <body>
 <header class="site-header"><div class="wrap nav"><a class="brand" href="#home" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="#home">Home</a><a href="#works">Featured Works</a><div class="has-sub"><a href="portfolio.html" class="sub-toggle" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><span class="sub-label" aria-hidden="true">Portfolio</span><a href="hamster-village.html" role="menuitem" class="work">햄스터 마을</a><a href="jellypop.html" role="menuitem" class="work">젤리팝</a><a href="portfolio.html#banana-portfolio" role="menuitem" class="work">바나나 키우기</a><a href="portfolio.html#yeobaek-portfolio" role="menuitem" class="work">여백</a><a href="portfolio.html#geulmat-portfolio" role="menuitem" class="work">글맛노트</a><a href="music.html" role="menuitem">Music</a><a href="writing.html" role="menuitem">Writing</a></div></div><a href="about.html">About</a><a href="mailto:ggiyoo@gmail.com" id="contact">Contact</a></nav></div></header>

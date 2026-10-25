@@ -307,7 +307,10 @@ html{scroll-padding-top:96px}
 </style>
 
 <style>.links a.active,.links .sub-toggle.active{color:#86649b}</style>
-<style id="nav-narrow">@media(max-width:400px){.links{gap:14px;font-size:12.5px}}</style>
+<style id="nav-narrow">@media(max-width:400px){.links{gap:14px;font-size:12.5px}}/* Glassmorphism: 상단 메뉴 */
+.site-header{background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(255,253,250,.52))!important;-webkit-backdrop-filter:blur(18px) saturate(1.5)!important;backdrop-filter:blur(18px) saturate(1.5)!important;border-bottom:1px solid rgba(255,255,255,.7)!important;box-shadow:0 6px 24px rgba(94,61,130,.08)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.site-header{background:rgba(255,253,250,.97)!important}}
+</style>
 </head>
 <body>
 <header class="site-header"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Lee Naeun 홈">Lee Naeun<small>CREATIVE ARCHIVE</small></a><nav class="links" aria-label="주 메뉴"><a href="index.html">Home</a><a href="index.html#works">Featured Works</a><div class="has-sub"><a href="portfolio.html" class="sub-toggle active" aria-haspopup="true" aria-expanded="false">Works <span class="caret" aria-hidden="true">▾</span></a><div class="submenu" role="menu"><a href="portfolio.html" role="menuitem" class="active" aria-current="page">Portfolio</a><a href="hamster-village.html" role="menuitem" class="work">햄스터 마을</a><a href="jellypop.html" role="menuitem" class="work">젤리팝</a><a href="portfolio.html#banana-portfolio" role="menuitem" class="work">바나나 키우기</a><a href="portfolio.html#yeobaek-portfolio" role="menuitem" class="work">여백</a><a href="portfolio.html#geulmat-portfolio" role="menuitem" class="work">글맛노트</a><a href="music.html" role="menuitem">Music</a><a href="writing.html" role="menuitem">Writing</a></div></div><a href="about.html">About</a><a href="mailto:ggiyoo@gmail.com" id="contact">Contact</a></nav></div></header>
