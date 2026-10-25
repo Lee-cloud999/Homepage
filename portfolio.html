@@ -512,7 +512,8 @@ html{scroll-padding-top:96px}
     var go=function(){
       var t=head.getBoundingClientRect().top, bt=acts.getBoundingClientRect().bottom;
       var h=bt-t;
-      var top=window.scrollY+t-Math.max(12,(window.innerHeight-h)/2);
+      var sh=document.querySelector('.site-header'), H=sh?sh.offsetHeight:0; /* 고정 메뉴 높이만큼 아래 영역에서 가운데 맞춤 */
+      var top=window.scrollY+t-(H+Math.max(12,(window.innerHeight-H-h)/2));
       window.scrollTo({top:Math.max(0,top),behavior:'instant'});
     };
     if(img&&!img.complete){img.loading='eager';img.addEventListener('load',go,{once:true});}
