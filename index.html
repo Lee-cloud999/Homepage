@@ -263,9 +263,11 @@
 
 .play-badge{display:inline-flex;align-items:center;gap:6px;margin:2px 0 8px;padding:5px 11px;border-radius:999px;background:#e8f3ec;color:#2f6b4a;border:1px solid #bfdcc9;font-size:12px;font-weight:700;letter-spacing:.01em;white-space:nowrap}.play-badge::before{content:"";width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #34a853}
 
-/* Hero 배경 패럴랙스 3겹 (뒤 8px · 중간 16px · 앞 24px, 모션 줄이기에서는 정지) */
+/* Hero 배경 패럴랙스 3겹 (뒤 40px · 중간 90px · 앞 160px, 모션 줄이기에서는 정지) */
 .hero:after,.hero:before{display:none!important}
-.hero-px{position:absolute;inset:-30px 0;z-index:0;pointer-events:none;overflow:visible}
+.hero{min-height:min(84vh,760px);display:flex;align-items:center}
+.hero>.wrap.hero-inner{width:min(1120px,calc(100% - 48px))}
+.hero-px{position:absolute;inset:-170px 0 -20px 0;z-index:0;pointer-events:none;overflow:visible}
 .hero-px i{position:absolute;inset:0;display:block;background-repeat:no-repeat;background-position:center;background-size:cover;transform:translate3d(0,var(--py,0px),0);will-change:transform}
 .hero-px .l1{background-image:url(assets/parallax/mist.webp);opacity:.9}
 .hero-px .l2{background-image:url(assets/parallax/ovals.webp);opacity:.8}
@@ -531,7 +533,7 @@ font-family:"Noto Serif KR","Noto Serif CJK KR","Nanum Myeongjo","Batang",serif;
 (function(){
   var hero=document.getElementById('home'); if(!hero) return;
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var L=[['l1',8],['l2',16],['l3',24]].map(function(p){return [hero.querySelector('.hero-px .'+p[0]),p[1]];});
+  var L=[['l1',40],['l2',90],['l3',160]].map(function(p){return [hero.querySelector('.hero-px .'+p[0]),p[1]];});
   var ticking=false;
   function update(){
     ticking=false;
